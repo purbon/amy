@@ -1,0 +1,159 @@
+body{
+    margin: 0 auto;
+    font-family: Georgia, Palatino, serif;
+    color: #444444;
+    line-height: 1;
+    background:  #bfb8a4 50% 0 repeat;
+    margin:auto;
+}
+
+#page {
+  margin-left: 5%;
+  width: 90%;
+}
+
+#header {
+ border: 5px #4b4b4d solid;
+ padding: 5px;
+ margin-bottom: 10px;
+ text-align: center;
+ border-radius: 5px;
+ -moz-border-radius: 5px;
+ -webkit-border-radius: 5px;
+}
+
+
+#header h1 {
+  margin: 5px 0px;
+  font-family: 'Fredoka One', cursive;
+  color: #b10e2b;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+#body {
+  padding: 0px;
+}
+
+table.menu {
+  border-collapse: separate;
+  border-spacing: 15px;
+}
+
+table.menu h3 {
+  margin: 5px 0px;
+  font-family: 'Fredoka One', cursive;
+  color: #000;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+h1, h2, h3, h4, h5, p {
+    margin-bottom: 24px;
+    padding: 0;
+}
+
+h2 {
+    font-size: 36px;
+    /* The bottom margin is small. It's designed to be used with gray meta text
+     * below a post title. */
+    margin: 24px 0 6px;
+}
+h3 {
+    font-size: 24px;
+}
+h4 {
+    font-size: 21px;
+}
+h5 {
+    font-size: 18px;
+    margin: 0 auto;
+    font-family: Georgia, Palatino, serif;
+    color: #444444;
+    line-height: 1;
+    max-width: 960px;
+    padding: 30px;
+}
+
+.section {
+  width: 100%;
+}
+
+table.entry {
+  width: 100%;
+  font-family: 'Fredoka One', cursive;
+  font-size: 30px;
+
+}
+
+table.entry td.toggle a {
+ float:right;
+}
+
+table.entry .params {
+  color: #b10e2b;
+}
+
+table.entry .method {
+  color: black;
+  font-weight:bold;
+  width: 100px;
+}
+
+table.entry .content {
+  font-size: 18px;
+  padding-left: 40px;
+}
+
+code {
+ font-family: Consolas, Monaco, Andale Mono, monospace;
+ line-height: 1.5;
+ font-size: 13px;
+ background-color: white;
+ padding: 10px;
+ border: 1px #4b4b4d dotted;
+ border-radius: 5px;
+ -moz-border-radius: 5px;
+ -webkit-border-radius: 5px;
+}
+
+.button {
+    padding: 5px 10px;
+    display: inline;
+    background: #777 url(../images/button.png) repeat-x bottom;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    text-shadow: 1px 1px #666;
+    text-decoration: none;
+    }
+.button:hover {
+    background-position: 0 -48px;
+    }
+.button:active {
+    background-position: 0 top;
+    position: relative;
+    top: 1px;
+    padding: 6px 10px 4px;
+    }
+.button.red { background-color: #e50000; }
+.button.purple { background-color: #9400bf; }
+.button.green { background-color: #58aa00; }
+.button.orange { background-color: #ff9c00; }
+.button.blue { background-color: #2c6da0; }
+.button.black { background-color: #333; }
+.button.white { background-color: #fff; color: #000; text-shadow: 1px 1px #fff; }
+.button.small { font-size: 75%; padding: 3px 7px; }
+.button.small:hover { background-position: 0 -50px; }
+.button.small:active { padding: 4px 7px 2px; background-position: 0 top; }
+.button.large { font-size: 125%; padding: 7px 12px; }
+.button.large:hover { background-position: 0 -35px; }
+.button.large:active { padding: 8px 12px 6px; background-position: 0 top; }

@@ -1,0 +1,17 @@
+[
+    {
+        "params": [
+            "_num_"
+        ],
+        "location": "crud/"
+    },
+    {
+        "params": [
+            "_num_",
+            "_num_"
+        ],
+        "location": "near_by/",
+        "special" : true
+    }
+
+]

@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require 'amy'
+
+if (ARGV.size != 1)
+  puts "USAGE: amy.rb [dir]"
+  exit(0)
+end
+
+parser = Amy::Parser.new(ARGV[0])
+parser.run
+exit(1)
