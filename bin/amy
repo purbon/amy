@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
 require 'amy'
-require 'bundler/setup'
 
 if (ARGV.size != 1)
   puts "USAGE: amy.rb [dir]"
