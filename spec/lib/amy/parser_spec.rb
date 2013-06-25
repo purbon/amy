@@ -3,9 +3,9 @@ require 'amy'
 
 describe Amy::Parser do
   
-  let(:dir){ 'specs' }
+  let(:dir){ File.join(ROOT, 'spec/fixtures/') }
 
-  it "should be nice and green" do
+  xit "should be nice and green" do
       parser = Amy::Parser.new(dir)
       parser.run
   end

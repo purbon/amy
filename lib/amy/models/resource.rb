@@ -13,6 +13,20 @@ module Amy::Model
       @sections = []
     end
 
+    def build
+     resources = Dir.new(@dir)
+     to_skip   = [ '.', '..', 'resource.def' ]
+     record    = { 'entries' => {} }
+     resources.entries.each do |entry|
+        next if to_skip.include?(entry)
+        content = load_file File.join(resources.path, entry)
+        method  = find_method_name entry
+        doc     = Maruku.new(content)
+        record['entries'][method] = doc.to_html
+     end
+     @sections << record
+    end
+
     def add_section(section)
       section['special'] ||= false
       record       = { 'params' => find_params_url(section), 'entries' => {} }
@@ -47,7 +61,7 @@ module Amy::Model
       specs['special'].include?(specs['location'])
     end
 
-    def find_method_name(entry, specs) 
+    def find_method_name(entry, specs="") 
       File.basename(entry, File.extname(entry)).upcase
     end
 
