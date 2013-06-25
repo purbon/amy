@@ -27,20 +27,6 @@ module Amy::Model
      @sections << record
     end
 
-    def add_section(section)
-      section['special'] ||= false
-      record       = { 'params' => find_params_url(section), 'entries' => {} }
-      resource_dir = Dir.new("#{@dir}/#{section['location']}")
-      resource_dir.entries.each do |entry|
-        next unless entry.end_with?('.def')
-        content = load_file "#{resource_dir.path}/#{entry}"
-        method = find_method_name entry, section
-        doc = Maruku.new(content)
-        record['entries'][method] = doc.to_html
-      end
-      @sections << record
-    end
-
     def get_binding; binding end
     
     private

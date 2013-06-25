@@ -7,8 +7,8 @@ module Amy
 
     attr_reader :base_dir
 
-    def initialize
-      @base_dir = "doc/"
+    def initialize(base_dir="doc/")
+      @base_dir = base_dir
     end
 
     def do(template, object)

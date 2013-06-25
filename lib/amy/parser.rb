@@ -3,9 +3,8 @@ require 'fileutils'
 module Amy
   class Parser
 
-    def initialize(dir="")
-      @dir       = dir
-      @generator = Amy::Generator.new
+    def initialize(base_dir = "doc/")
+      @generator = Amy::Generator.new base_dir
     end
 
     def execute(dir)
