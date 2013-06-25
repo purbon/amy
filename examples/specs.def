@@ -1,3 +1,5 @@
 {
-  "orgs" : "The organization resources"
+   "orgs" : "The organization resources",
+   "org"  : "An API for accessing a single organization",
+   "maps" : "Set of resources to handle maps within organizations"
 }
