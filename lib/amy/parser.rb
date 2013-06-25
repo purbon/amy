@@ -10,20 +10,10 @@ module Amy
     def execute(dir)
       specs = load_specs dir
       generate_main_page_with specs
-      specs.each_pair do |name, title|
-        puts "Generating resource documentation of #{title}"
-        parse_a_resource File.join(dir, name), name, title
-      end
-      copy_styles_and_js
-      true
-    end
-
-    def run
-      specs = load_specs(@dir)
-      generate_main_page_with specs
-      specs.each_pair do |k,v|
-        puts "Generating resource documentation of #{v}"
-        parse_a_resource("#{@dir}/#{k}",k,v)
+      specs['resources'].each_pair do | resource, options|
+        puts "Generating resource documentation of #{options['title']}"
+        name = options['dir']
+        parse_a_resource File.join(dir, name), name, options['title']
       end
       copy_styles_and_js
       true
@@ -50,9 +40,11 @@ module Amy
 
     def generate_main_page_with(specs)
       main_page = Amy::Model::Main.new
-      specs.each_pair { |resource, title|
-         main_page.add_resource( { 'resource' => resource, 'title' => title } )
+      specs['resources'].each_pair { |resource, options|
+         main_page.add_resource( { 'resource' => resource, 'title' => options['title'] } )
       }
+      main_page.set_version  specs['api_version']
+      main_page.set_base_url specs['base_url']
       @generator.do("#{Amy::BASE_DIR}/views/main.erb.html", main_page)
     end
     

@@ -1,5 +1,18 @@
 {
-   "orgs" : "The organization resources",
-   "org"  : "An API for accessing a single organization",
-   "maps" : "Set of resources to handle maps within organizations"
+    "resources": {
+        "/orgs": {
+            "dir": "orgs",
+            "title": "The organization resources"
+        },
+        "/orgs/:org": {
+            "dir": "org",
+            "title": "An API for accessing a single organization"
+        },
+        "/maps": {
+            "dir": "maps",
+            "title": "Set of resources to handle maps within organizations"
+        }
+    },
+    "base_url" : "http://api.linkedenergy.eu:1884",
+    "api_version" : "1.0"
 }

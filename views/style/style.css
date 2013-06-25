@@ -35,6 +35,64 @@ body{
   display: table-cell;
 }
 
+.resources {
+  margin-left: 10%;
+  padding-top: 5%;
+  margin-right: 10%;
+}
+.resource {
+  display: table;
+  width: 100%;
+  border-top:1px solid #000;
+  height: 30px;
+  padding-top: 5px;
+}
+.resource .name {
+  display: table-cell;
+  width: 15%;
+}
+.resource .title {
+  display: table-cell;
+  width: 40%;
+}
+.resource .name a {
+  color: #999999;
+  font-size: 19px;
+  font-weight: bold;
+  font-family: 'Droid Sans', sans-serif;
+}
+.resource .name a:hover {
+  color: black;
+}
+.resource .menu {
+  float: right;
+  color: #666666;
+  font-size: 0.9em;
+}
+
+.resource .menu a {
+  color: #666;
+}
+
+.footer {
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: #666;
+  display: table;
+}
+
+.footer .base_url {
+  display: table-cell;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.footer .version {
+  display: table-cell;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 #body {
   padding: 0px;
 }
