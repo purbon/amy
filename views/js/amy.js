@@ -29,5 +29,20 @@ function add_resource(resource, config) {
       html += '<div class="title">'+config['title']+'</div>';
       html += '<div class="menu"> <a href="#">Show/Hide</a> | <a href="#">Raw</a> </div>';
       html += '</div>';
+      html += add_section(config['sections'][0]['entries']);
     $('.resources').append(html);
+}
+
+function add_section(config) {
+  var html  = '<div class="methods">';
+  var methods = Object.keys(config);
+  for(var i=0; i < methods.length; i++) {
+        html += '<div class="method">';
+        html += '<div class="name">'+methods[i]+'</div>';
+        html += '<div class="url"><a href="#">http://www.example.com</a></div>';
+        html += '<div class="desc">Method description</div>';
+        html += '</div>';
+  }
+  html += '</div>';
+  return html;
 }
