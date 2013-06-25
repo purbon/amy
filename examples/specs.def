@@ -1,4 +1,3 @@
 {
-    "maps": "The Map resource",
-    "elements" : "The markers and map outlier resource"
+  "orgs" : "The organization resources"
 }
