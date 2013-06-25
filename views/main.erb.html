@@ -15,13 +15,6 @@
       </div>
       <div id="body">
         <div class="resources">
-          <% @resources.each do |item| %>
-          <div class="resource">
-            <div class="name">  <a href='<%= item['resource'] %>.html'><%= item['resource'] %></a> </div>
-            <div class="title"> <%= item['title'] %> </div>
-            <div class="menu"> <a href="#">Show/Hide</a> | <a href="#">Raw</a> </div>
-          </div>
-          <% end %>
         </div>
         <div class="footer">
           [ <div class="base_url"> BASE_URL: <%= @base_url %> </div> | <div class="version"> API_VERSION: <%= @apiversion %></div> ]
