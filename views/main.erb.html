@@ -4,18 +4,22 @@
   </head>
   <body>
     <div id="page">
-       <div id="header">
-          <h1>REST API Documentation</h1>
-       </div>
-       <div id="body">
-        <table class="menu">
+      <div id="header">
+        <h1>REST API Documentation</h1>
+        <form id="selector">
+          <input type="text" id="key"/>
+          <a href="#" class="button green" id="explore">Explore</a>
+        </form>
+      </div>
+      <div id="body">
+        <div class="menu">
           <% @resources.each do |item| %>
-          <tr>
-            <td> <a href='<%= item['resource'] %>.html' class="button red"><%= item['resource'] %></a> </td>
-            <td> <h3><%= item['title'] %></h3></td>
-          </td>
-            <% end %>
-        </table>
-       </div>
-  </body>
-</html>
+          <div class="resource">
+            <div class="name">  <a href='<%= item['resource'] %>.html'>/<%= item['resource'] %></a> </div>
+            <div class="title"> <h3><%= item['title'] %></h3> </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </body>
+  </html>

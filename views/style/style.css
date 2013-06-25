@@ -1,55 +1,42 @@
 body{
-    margin: 0 auto;
     font-family: Georgia, Palatino, serif;
     color: #444444;
     line-height: 1;
-    background:  #bfb8a4 50% 0 repeat;
-    margin:auto;
+    background-color:  #fff;
+    margin: 0;
 }
 
 #page {
-  margin-left: 5%;
-  width: 90%;
+  width: 100%;
 }
 
 #header {
- border: 5px #4b4b4d solid;
- padding: 5px;
- margin-bottom: 10px;
- text-align: center;
- border-radius: 5px;
- -moz-border-radius: 5px;
- -webkit-border-radius: 5px;
+  background-color: #89bf04;
+  height: 10%;
+  display: table;
+  width: 100%;
 }
 
 
 #header h1 {
-  margin: 5px 0px;
+  display: table-cell;
   font-family: 'Fredoka One', cursive;
+  font-size: 20px;
   color: #b10e2b;
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
   -o-user-select: none;
+  padding-left: 10%;
+  padding-top:  5px;
+}
+
+#header #selector {
+  display: table-cell;
 }
 
 #body {
   padding: 0px;
-}
-
-table.menu {
-  border-collapse: separate;
-  border-spacing: 15px;
-}
-
-table.menu h3 {
-  margin: 5px 0px;
-  font-family: 'Fredoka One', cursive;
-  color: #000;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
 }
 
 h1, h2, h3, h4, h5, p {
