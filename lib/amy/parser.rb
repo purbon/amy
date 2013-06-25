@@ -8,7 +8,8 @@ module Amy
     end
 
     def execute(dir)
-      specs = load_specs dir
+      specs  = load_specs dir
+      compile_json_specs_with dir, specs
       generate_main_page_with specs
       specs['resources'].each_pair do | resource, options|
         puts "Generating resource documentation of #{options['title']}"
@@ -21,21 +22,20 @@ module Amy
 
     private
 
-    def copy_styles_and_js
-      base_dir = @generator.base_dir
-      Dir.mkdir("#{base_dir}/js")
-      FileUtils.cp("#{Amy::BASE_DIR}/views/js/amy.js", "#{base_dir}/js/amy.js")
-      Dir.mkdir("#{base_dir}/style")
-      FileUtils.cp("#{Amy::BASE_DIR}/views/style/style.css", "#{base_dir}/style/style.css")
+    def compile_json_specs_with(dir, specs)
+      specs['resources'].each_pair { |resource, options|
+        resource_page = Amy::Model::Resource.new(File.join(dir, options['dir']), options['dir'], options['title'])
+        resource_page.build
+        options['sections'] = resource_page.sections
+      }
+      File.open("#{Amy::BASE_DIR}/views/js/data.json", 'w') do |f|
+        f.write(specs.to_json)
+      end
     end
 
     def parse_a_resource(dir, name, title)
       resource = JSON.parse(IO.read(File.join(dir,"resource.def")))
       generate_resource_page_with dir, resource, name, title
-    end
-
-    def load_specs(dir)
-      JSON.parse(IO.read(File.join(dir,"/specs.def")))
     end
 
     def generate_main_page_with(specs)
@@ -52,6 +52,19 @@ module Amy
       resource_page = Amy::Model::Resource.new(dir, name, title)
       resource_page.build
       @generator.do("#{Amy::BASE_DIR}/views/resource.erb.html", resource_page)
+    end
+
+    def load_specs(dir)
+      JSON.parse(IO.read(File.join(dir,"/specs.def")))
+    end
+
+    def copy_styles_and_js
+      base_dir = @generator.base_dir
+      Dir.mkdir("#{base_dir}/js")
+      FileUtils.cp("#{Amy::BASE_DIR}/views/js/amy.js", "#{base_dir}/js/amy.js")
+      FileUtils.cp("#{Amy::BASE_DIR}/views/js/data.json", "#{base_dir}/data.json")      
+      Dir.mkdir("#{base_dir}/style")
+      FileUtils.cp("#{Amy::BASE_DIR}/views/style/style.css", "#{base_dir}/style/style.css")
     end
 
   end

@@ -3,7 +3,7 @@ require 'maruku'
 module Amy::Model
   class Resource
 
-    attr_reader :path
+    attr_reader :path, :sections
     
     def initialize(dir, name, title)
       @dir      = dir

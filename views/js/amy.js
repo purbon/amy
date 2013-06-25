@@ -11,3 +11,11 @@ function toggle(element) {
   var content = element.parentElement.parentElement.nextElementSibling.getElementsByClassName("content")[0];
   $(content).toggle("slow");
  }
+
+ $(document).ready(function() {
+
+   $.getJSON('data.json', function(data) {
+     console.log(data);
+   });
+  
+ });
