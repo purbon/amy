@@ -76,7 +76,7 @@ body{
 }
 .methods {
   margin-left: 5%;
-    -moz-user-select: none;
+  -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
   -o-user-select: none;
@@ -88,6 +88,7 @@ body{
   background-color: #f9f2e9;
   margin-bottom: 5px;
   padding: 5px;
+  border: 1px solid black;
 }
 
 .methods .method .name {
@@ -107,7 +108,8 @@ body{
 }
 
 .methods .create {
-  background-color: #f0e0ca; 
+  background-color: #f9f2e9;
+  border-color: #f0e0ca;
 }
 .methods .method .create {
   background-color: #c5862b;
@@ -117,7 +119,8 @@ body{
 }
 
 .methods .get {
-  background-color: #e7f0f7; 
+  background-color: #e7f0f7;
+  border-color: #c3d9ec;
 }
 .methods .method .get {
   background-color: #0f6ab4;
@@ -127,7 +130,8 @@ body{
 }
 
 .methods .options {
-  background-color: #e7f6ec; 
+  background-color: #e7f6ec;
+  border-color: #c3e8d1;
 }
 .methods .method .options {
   background-color: #10a54a;
@@ -138,6 +142,7 @@ body{
 
 .methods .delete {
   background-color: #f5e8e8; 
+  border-color: #e8c6c7;
 }
 .methods .method .delete {
   background-color: #a41e22;
