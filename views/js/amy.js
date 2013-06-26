@@ -20,11 +20,19 @@ function toggle(element) {
           add_resource(resources[i], resource, i);
           $('#resource'+i).toggle();
       }
+      add_resource_events();
    });
  });
 
 function toggleMethods(i) {
   $('#resource'+i).fadeToggle();
+}
+function add_resource_events() {
+  $(".resource").hover(function(){
+    $(this).css("background", "#f5f5f5");
+  }, function(){
+    $(this).css("background", "#fff");
+  });
 }
 function add_resource(resource, config, i) {
   var html  = '<div class="resource">';
