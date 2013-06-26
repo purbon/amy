@@ -13,6 +13,9 @@ function toggle(element) {
  }
 
  $(document).ready(function() {
+   var loc = window.location;
+   var url = loc.origin+loc.pathname+'data.json';
+   $('#header #selector input').val(url);
    $.getJSON('data.json', function(data) {
       var resources = Object.keys(data['resources']);
       for(var i=0; i < resources.length; i++) {
