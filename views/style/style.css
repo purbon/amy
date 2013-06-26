@@ -178,6 +178,10 @@ body{
   font-weight: bold;
 }
 
+.method .url a:hover {
+  text-decoration: underline;
+}
+
 .methods .method .desc {
   display: table-cell;
   font-size: 15px;
