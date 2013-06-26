@@ -26,7 +26,14 @@ function toggle(element) {
           anchor = anchor.replace(/:/g,'\\:');
       $(anchor).next().fadeToggle();
    });
+
  });
+
+function showJSON() {
+   var loc = window.location;
+   var url = loc.origin+loc.pathname+'data.json';
+   window.open(url,"_self")
+}
 
 function toggleMethods(i) {
   event.stopPropagation();
@@ -49,7 +56,7 @@ function add_resource(resource, config, i) {
   var html  = '<div class="resource" id="'+resource+'">';
       html += '<div class="name">  <a href="#!'+resource+'">'+resource+'</a> </div>';
       html += '<div class="title">'+config['title']+'</div>';
-      html += '<div class="menu"> <a href="#" onclick="toggleMethods('+i+')">Show/Hide</a> | <a href="#">Raw</a> </div>';
+      html += '<div class="menu"> <a href="#" onclick="toggleMethods('+i+')">Show/Hide</a> | <a href="#" onclick="showJSON()">Raw</a> </div>';
       html += '</div>';
       html += add_section(resource, config['sections']['config'], config['sections']['entries'], i);
     $('.resources').append(html);
