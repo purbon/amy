@@ -111,6 +111,7 @@ body{
 .method .url a {
   color: black;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .methods .method .desc {
