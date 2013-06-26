@@ -90,6 +90,8 @@ body{
   padding: 5px;
   border: 1px solid black;
 }
+.methods .method .header {
+}
 
 .methods .method .name {
   display: table-cell;
@@ -117,6 +119,9 @@ body{
 .methods .method.create .desc {
   color: #c5862b;
 }
+.create h3 {
+  color: #c5862b;
+}
 
 .methods .get {
   background-color: #e7f0f7;
@@ -126,6 +131,9 @@ body{
   background-color: #0f6ab4;
 }
 .methods .method.get .desc {
+  color: #0f6ab4;
+}
+.get h3 {
   color: #0f6ab4;
 }
 
@@ -139,6 +147,9 @@ body{
 .methods .method.options .desc {
   color: #10a54a;
 }
+.options h3 {
+  color: #10a54a;
+}
 
 .methods .delete {
   background-color: #f5e8e8; 
@@ -150,9 +161,14 @@ body{
 .methods .method.delete .desc {
   color: #a41e22;
 }
+
+.delete h3 {
+  color: #a41e22;
+}
+
 .methods .method .url {
   display: table-cell;
-  width: 40%;
+  width: 70%;
   padding-left: 10px;
 }
 
@@ -164,9 +180,14 @@ body{
 
 .methods .method .desc {
   display: table-cell;
-  float: right;
   font-size: 15px;
   color: black;
+  width: 30%;
+}
+
+.methods .content {
+  font-size: 0.7em !important;
+  margin-left: 5%;
 }
 
 .footer {
