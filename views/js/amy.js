@@ -16,21 +16,35 @@ function toggle(element) {
    var loc = window.location;
    var url = loc.origin+loc.pathname+'data.json';
    $('#header #selector input').val(url);
-   $.getJSON('data.json', function(data) {
-      var resources = Object.keys(data['resources']);
-      for(var i=0; i < resources.length; i++) {
-          var resource = data['resources'][resources[i]];
-          add_resource(resources[i], resource, i);
-          $('#resource'+i).toggle();
-      }
-      add_resource_events();
-      var anchor = window.location.hash.replace('!','');
-          anchor = anchor.replace(/\//g,"\\/");
-          anchor = anchor.replace(/:/g,'\\:');
-      $(anchor).next().fadeToggle();
+   setup(url);
+   $('#header #explore').click(function() {
+      setup($('#header #selector input').val());
    });
-
  });
+
+ function setup(jsonfile) {
+   $.ajax({
+     url: jsonfile,
+     type: "GET",
+     dataType: "json",
+     success: function(data) {
+       var resources = Object.keys(data['resources']);
+       for(var i=0; i < resources.length; i++) {
+         var resource = data['resources'][resources[i]];
+         add_resource(resources[i], resource, i);
+         $('#resource'+i).toggle();
+       }
+       add_resource_events();
+       var anchor = window.location.hash.replace('!','');
+       anchor = anchor.replace(/\//g,"\\/");
+         anchor = anchor.replace(/:/g,'\\:');
+       $(anchor).next().fadeToggle();
+     },
+     error: function(e) {
+       $('.resources').remove()
+     }
+   });
+ }
 
 function showJSON() {
    var loc = window.location;
