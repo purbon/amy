@@ -154,7 +154,6 @@ body{
   color: #c5862b;
 }
 
-
 .methods .get {
   background-color: #e7f0f7;
   border-color: #c3d9ec;
@@ -166,6 +165,20 @@ body{
   color: #0f6ab4;
 }
 .get h3 {
+  color: #0f6ab4;
+}
+
+.methods .monitor {
+  background-color: #e7f0f7;
+  border-color: #c3d9ec;
+}
+.methods .method .monitor {
+  background-color: #0f6ab4;
+}
+.methods .method.monitor .desc {
+  color: #0f6ab4;
+}
+.monitor h3 {
   color: #0f6ab4;
 }
 
