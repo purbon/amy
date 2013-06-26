@@ -53,6 +53,7 @@ function add_resource(resource, config, i) {
       html += '</div>';
       html += add_section(resource, config['sections']['config'], config['sections']['entries'], i);
     $('.resources').append(html);
+    $('#resource'+i+' .content').toggle()
 }
 
 function add_section(resource, config, entries, i) {
