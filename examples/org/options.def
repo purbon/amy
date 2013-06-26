@@ -1,0 +1,5 @@
+### Return a list of valid HTTP methods/verbs for the given resource.
+
+### Example:
+
+curl -X OPTIONS [http://api.linkedenergy.eu:1884/orgs/belectric_its](http://api.linkedenergy.eu:1884/orgs/belectric_its)

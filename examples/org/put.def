@@ -1,0 +1,18 @@
+### Update the set of properties within a given organization
+
+* param **org_id** _String_ The organization name
+* return _Hash_ The new organization data
+
+The body must contain a json hash with the properties you wan to be updated or appended to the organization, keep in mind the name must match.
+
+### Example:
+
+curl -XPUT [http://api.linkedenergy.eu:1884/orgs/belectric_its](http://api.linkedenergy.eu:1884/orgs/belectric_its)
+
+`{
+  "name": "belectric_its",
+    "properties": {
+      "type": "Grid"
+    },
+    "id": "51c95ca4d1da60255e000003"
+}`
