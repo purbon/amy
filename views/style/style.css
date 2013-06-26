@@ -27,6 +27,7 @@ body{
   -o-user-select: none;
   padding-left: 10%;
   padding-top:  5px;
+  width: 40%;
 }
 #header h1 {
   font-size: 1.5em;
@@ -43,6 +44,11 @@ body{
 
 #header #selector {
   display: table-cell;
+  width: 60%;
+}
+
+#header #selector input {
+  width: 50%;
 }
 
 .resources {
