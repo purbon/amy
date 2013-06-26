@@ -1,8 +1,0 @@
-### Delete all resources matching a given function within the HTTP body. (optional)
-
-* body   _String_ The function used to filter the elements to be deleted.
-* return _Hash_     The deleted element
- 
-### Example:
-
-curl -X DELETE [http://example.com/orgs/belectric_its](http://example.com/orgs/belectric_its)
