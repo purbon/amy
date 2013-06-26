@@ -53,11 +53,14 @@ function add_section(resource, config, i) {
   for(var i=0; i < methods.length; i++) {
         var field = config[methods[i]];
         html += '<div class="method">';
-        html += '<div class="name">'+methods[i]+'</div>';
+        html += '<div class="name '+methods[i]+'">'+methods[i]+'</div>';
         html += '<div class="url"><a href="#">'+field['url']+'</a></div>';
         html += '<div class="desc">'+field['desc']+'</div>';
         html += '</div>';
   }
   html += '</div>';
   return html;
+}
+function capitalise(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }

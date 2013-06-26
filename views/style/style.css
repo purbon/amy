@@ -92,15 +92,34 @@ body{
 
 .methods .method .name {
   display: table-cell;
-  width: 75px;
+  width: 50px;
+  font-size: 0.7em;
   background-color: #10a54a;
   padding: 5px;
   color: white;
   font-weight: bold;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
   text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.methods .method .create {
+  background-color: #c5862b;
+}
+
+.methods .method .get {
+  background-color: #0f6ab4;
+}
+
+.methods .method .options {
+  background-color: #10a54a;
+}
+
+.methods .method .delete {
+  background-color: #a41e22;
 }
 
 .methods .method .url {
