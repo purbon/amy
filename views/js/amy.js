@@ -28,11 +28,13 @@ function toggleMethods(i) {
   event.stopPropagation();
   $('#resource'+i).fadeToggle();
 }
-function add_resource_events(count) {
+function add_resource_events() {
   $(".resource").hover(function(){
     $(this).css("background", "#f5f5f5");
+    $(this).children('div').children().css('color', 'black');
   }, function(){
     $(this).css("background", "#fff");
+    $(this).children('div').children().css('color', '#999');
   });
   $('.resource').click(function(event) {
     event.stopPropagation();
