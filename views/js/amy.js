@@ -52,7 +52,7 @@ function add_section(resource, config, i) {
   var methods = Object.keys(config);
   for(var i=0; i < methods.length; i++) {
         var field = config[methods[i]];
-        html += '<div class="method">';
+        html += '<div class="method '+methods[i]+'">';
         html += '<div class="name '+methods[i]+'">'+methods[i]+'</div>';
         html += '<div class="url"><a href="#">'+field['url']+'</a></div>';
         html += '<div class="desc">'+field['desc']+'</div>';
