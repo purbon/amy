@@ -1,0 +1,18 @@
+### Return a single map data
+
+* param  **org**  _String_  The organization name
+* param  **map**  _String_  The map we want the data from
+* return _Hash_  The map data
+ 
+### Example:
+
+curl -X GET [http://api.linkedenergy.eu:1884/orgs/belectric_its/maps/germany](http://api.linkedenergy.eu:1884/orgs/belectric_its/maps/germany)
+
+`{
+        "name": "germany",
+        "properties": {
+            "type": "SolarPower"
+        },
+        "organization": "belectric_its",
+        "id": "51c95ca4d1da60255e000004"
+}`

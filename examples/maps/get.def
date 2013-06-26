@@ -1,0 +1,21 @@
+### Returns a (filtered) list of maps.
+
+* param  **org**  _String_  The organization name
+* param  **skip** _Integer_ Number of elements to skeep before start the operation
+* param  **take** _Integer_ Number of elements to be shown as a result
+* return _Array_ List of maps
+ 
+### Example:
+
+[http://api.linkedenergy.eu:1884/orgs/belectric_its/maps?skip=3&take=10](http://api.linkedenergy.eu:1884/orgs/belectric_its/maps?skip=3&take=10)
+
+`[
+    {
+        "name": "germany",
+        "properties": {
+            "type": "SolarPower"
+        },
+        "organization": "belectric_its",
+        "id": "51c95ca4d1da60255e000004"
+    }
+]`

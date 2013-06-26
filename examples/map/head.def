@@ -1,0 +1,17 @@
+### Return only the headers (not including the body) of the given resource.
+
+* param **org** _String_ The organization name
+* param **map** _String_ A map name
+
+* return _String_ Returns only the set of headers related with this resource
+
+### Example:
+
+curl -XHEAD [http://api.linkedenergy.eu:1884/orgs/belectric_its/maps/germany](http://api.linkedenergy.eu:1884/orgs/belectric_its/maps/germany)
+
+`
+ HTTP/1.1 200 OK
+ ETag: 1234
+ Content-Type: application/json; charset=UTF-8
+ Content-Length: 182
+`

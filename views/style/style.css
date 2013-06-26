@@ -66,7 +66,7 @@ body{
 
 .resource .name {
   display: table-cell;
-  width: 15%;
+  width: 25%;
 }
 .resource .title {
   display: table-cell;

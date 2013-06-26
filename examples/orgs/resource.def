@@ -3,7 +3,6 @@
   "title" : "Kirchoff organizations",
   "config" : { 
       "create"  : { "url" : "/orgs", "desc": "Create a new organization" },
-      "delete"  : { "url" : "/orgs/belectric_its", "desc": "Deletes a given organization" },
       "get"     : { "url" : "/orgs?skip=3&take10", "desc": "Get\"s a list of organizations" },
       "options" : { "url" : "/orgs", "desc": "Get\"s the list of valid HTTP verbs" },
       "head"    : { "url" : "/orgs", "desc": "Return the resource available headers" },

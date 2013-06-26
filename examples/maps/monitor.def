@@ -1,0 +1,10 @@
+### Creates and event stream that inform the users registered to it throw Server Send Events about the resource status
+
+* return _Void_
+
+This resource must be used to register and get Server Send Events about every update, or anything relevant, happening in this 
+resource.
+
+### Example:
+
+curl -XMONITOR [http://api.linkedenergy.eu:1884/orgs/belectric_its/maps](http://api.linkedenergy.eu:1884/orgs/belectric_its/maps)

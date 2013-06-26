@@ -8,9 +8,13 @@
             "dir": "org",
             "title": "An API for accessing a single organization"
         },
-        "/maps": {
+        "/orgs/:org/maps": {
             "dir": "maps",
             "title": "Set of resources to handle maps within organizations"
+        },
+        "/orgs/:org/maps/:map": {
+            "dir": "map",
+            "title": "How to handle a given map"
         }
     },
     "base_url" : "http://api.linkedenergy.eu:1884",

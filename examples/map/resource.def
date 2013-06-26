@@ -1,0 +1,10 @@
+{
+  "name"    : "maps",
+  "title"   : "An API for dealing with maps",
+  "config" : {
+    "get"     : { "url": "/orgs/:org/maps/:map", "desc": "Gets the list of maps in an organization" },
+    "head"    : { "url": "/orgs/:org/maps/:map", "desc": "Return the server headers, without the body" },
+    "options" : { "url": "/orgs/:org/maps/:map", "desc": "Get\"s the list of valid HTTP verbs" },
+    "monitor" : { "url": "/orgs/:org/maps/:map", "desc": "Monitor the resouce throw SSE" }
+  }
+}
