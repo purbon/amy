@@ -54,6 +54,9 @@ function add_resource(resource, config, i) {
       html += add_section(resource, config['sections']['config'], config['sections']['entries'], i);
     $('.resources').append(html);
     $('#resource'+i+' .content').toggle()
+    $('#resource'+i+' .method .url a').click(function(event) {
+        $(this).parent().parent().next().fadeToggle();
+    });
 }
 
 function add_section(resource, config, entries, i) {
