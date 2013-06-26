@@ -22,10 +22,10 @@ function toggle(element) {
       }
       add_resource_events();
       var anchor = window.location.hash.replace('!','');
-          anchor = anchor.replace(/\//g,"\\/");
+          anchor = anchor.replace(/\\//g,"\\/");
           anchor = anchor.replace(/:/g,'\\:');
       $(anchor).next().fadeToggle();
-      console.log($(anchor).next());
+      console.log($(anchor));
    });
  });
 
