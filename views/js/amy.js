@@ -25,6 +25,7 @@ function toggle(element) {
  });
 
 function toggleMethods(i) {
+  event.stopPropagation();
   $('#resource'+i).fadeToggle();
 }
 function add_resource_events(count) {
@@ -34,6 +35,7 @@ function add_resource_events(count) {
     $(this).css("background", "#fff");
   });
   $('.resource').click(function(event) {
+    event.stopPropagation();
     $(event.delegateTarget).next().fadeToggle();
   });
 }
