@@ -126,8 +126,14 @@ body{
   color: #0f6ab4;
 }
 
+.methods .options {
+  background-color: #e7f6ec; 
+}
 .methods .method .options {
   background-color: #10a54a;
+}
+.methods .method.options .desc {
+  color: #10a54a;
 }
 
 .methods .delete {
