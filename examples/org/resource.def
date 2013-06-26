@@ -4,7 +4,8 @@
   "config" : {
       "get"     : { "url": "/orgs/:org", "desc": "Get\"s the given organization stored data" },
       "head"    : { "url": "/orgs/:org", "desc": "Return the server headers, without the body" },
-      "options" : { "url": "/orgs/:org", "desc": "Get\"s the list of valid HTTP verbs" }
+      "options" : { "url": "/orgs/:org", "desc": "Get\"s the list of valid HTTP verbs" },
+      "put"     : { "url": "/orgs/:org", "desc": "Updates or add data to a previously created organization" }
 
   }
 }

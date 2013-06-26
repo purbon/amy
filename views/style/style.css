@@ -104,7 +104,7 @@ body{
   background-color: #f9f2e9;
   margin-bottom: 5px;
   padding: 5px;
-  border: 1px solid black;
+  border: 1px solid #f9f2e9;
 }
 .methods .method .header {
 }
@@ -138,6 +138,22 @@ body{
 .create h3 {
   color: #c5862b;
 }
+
+
+.methods .put {
+  background-color: #f9f2e9;
+  border-color: #f0e0ca;
+}
+.methods .method .put {
+  background-color: #c5862b;
+}
+.methods .method.put .desc {
+  color: #c5862b;
+}
+.put h3 {
+  color: #c5862b;
+}
+
 
 .methods .get {
   background-color: #e7f0f7;
@@ -184,7 +200,7 @@ body{
 
 .methods .method .url {
   display: table-cell;
-  width: 70%;
+  width: 60%;
   padding-left: 10px;
 }
 
@@ -202,7 +218,8 @@ body{
   display: table-cell;
   font-size: 15px;
   color: black;
-  width: 30%;
+  width: 40%;
+  text-align: right;
 }
 
 .methods .content {
