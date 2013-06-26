@@ -27,11 +27,14 @@ function toggle(element) {
 function toggleMethods(i) {
   $('#resource'+i).fadeToggle();
 }
-function add_resource_events() {
+function add_resource_events(count) {
   $(".resource").hover(function(){
     $(this).css("background", "#f5f5f5");
   }, function(){
     $(this).css("background", "#fff");
+  });
+  $('.resource').click(function(event) {
+    $(event.delegateTarget).next().fadeToggle();
   });
 }
 function add_resource(resource, config, i) {
