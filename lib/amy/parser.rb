@@ -11,11 +11,11 @@ module Amy
       specs  = load_specs dir
       compile_json_specs_with dir, specs
       generate_main_page_with specs
-      specs['resources'].each_pair do | resource, options|
-        puts "Generating resource documentation of #{options['title']}"
-        name = options['dir']
-        parse_a_resource File.join(dir, name), name, options['title']
-      end
+      #specs['resources'].each_pair do | resource, options|
+      #  puts "Generating resource documentation of #{options['title']}"
+      #  name = options['dir']
+      #  parse_a_resource File.join(dir, name), name, options['title']
+      #end
       copy_styles_and_js
       true
     end
@@ -24,7 +24,8 @@ module Amy
 
     def compile_json_specs_with(dir, specs)
       specs['resources'].each_pair { |resource, options|
-        resource_page = Amy::Model::Resource.new(File.join(dir, options['dir']), options['dir'], options['title'])
+        resource_spec = JSON.parse(IO.read(File.join(File.join(dir, options['dir']),"resource.def")))
+        resource_page = Amy::Model::Resource.new(File.join(dir, options['dir']), resource_spec, options['dir'], options['title'])
         resource_page.build
         options['sections'] = resource_page.sections
       }
@@ -49,7 +50,7 @@ module Amy
     end
     
     def generate_resource_page_with(dir, specs, name, title)
-      resource_page = Amy::Model::Resource.new(dir, name, title)
+      resource_page = Amy::Model::Resource.new(dir, specs, name, title)
       resource_page.build
       @generator.do("#{Amy::BASE_DIR}/views/resource.erb.html", resource_page)
     end

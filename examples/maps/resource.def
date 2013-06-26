@@ -1,4 +1,5 @@
 {
-  "name"  : "maps",
-  "title" : "An API for dealing with maps"
+  "name"    : "maps",
+  "title"   : "An API for dealing with maps",
+  "config" : {}
 }

@@ -1,4 +1,7 @@
 {
-  "name"  : "org",
-  "title" : "A single organization"
+  "name"    : "org",
+  "title"   : "A single organization",
+  "config" : {
+      "get" : { "url": "/orgs/:org", "desc": "Get\"s the given organization stored data" }
+  }
 }

@@ -5,7 +5,8 @@ module Amy::Model
 
     attr_reader :path, :sections
     
-    def initialize(dir, name, title)
+    def initialize(dir, specs, name, title)
+      @specs    = specs
       @dir      = dir
       @title    = title
       @path     = "#{name}.html"
@@ -16,7 +17,7 @@ module Amy::Model
     def build
      resources = Dir.new(@dir)
      to_skip   = [ '.', '..', 'resource.def' ]
-     record    = { 'entries' => {} }
+     record    = { 'entries' => {}, 'config' => @specs['config'] }
      resources.entries.each do |entry|
         next if to_skip.include?(entry)
         content = load_file File.join(resources.path, entry)
@@ -24,7 +25,7 @@ module Amy::Model
         doc     = Maruku.new(content)
         record['entries'][method] = doc.to_html
      end
-     @sections << record
+     @sections = record
     end
 
     def get_binding; binding end

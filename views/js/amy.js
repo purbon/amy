@@ -23,13 +23,16 @@ function toggle(element) {
    });
  });
 
+function toggleMethods(i) {
+  $('#resource'+i).fadeToggle();
+}
 function add_resource(resource, config, i) {
   var html  = '<div class="resource">';
       html += '<div class="name">  <a href="#">'+resource+'</a> </div>';
       html += '<div class="title">'+config['title']+'</div>';
-      html += '<div class="menu"> <a href="#">Show/Hide</a> | <a href="#">Raw</a> </div>';
+      html += '<div class="menu"> <a href="#" onclick="toggleMethods('+i+')">Show/Hide</a> | <a href="#">Raw</a> </div>';
       html += '</div>';
-      html += add_section(resource, config['sections'][0]['entries'], i);
+      html += add_section(resource, config['sections']['config'], i);
     $('.resources').append(html);
 }
 
@@ -37,10 +40,11 @@ function add_section(resource, config, i) {
   var html  = '<div class="methods" id="resource'+i+'">';
   var methods = Object.keys(config);
   for(var i=0; i < methods.length; i++) {
+        var field = config[methods[i]];
         html += '<div class="method">';
         html += '<div class="name">'+methods[i]+'</div>';
-        html += '<div class="url"><a href="#">http://www.example.com</a></div>';
-        html += '<div class="desc">Method description</div>';
+        html += '<div class="url"><a href="#">'+field['url']+'</a></div>';
+        html += '<div class="desc">'+field['desc']+'</div>';
         html += '</div>';
   }
   html += '</div>';
