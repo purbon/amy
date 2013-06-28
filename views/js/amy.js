@@ -14,7 +14,9 @@ function toggle(element) {
 
  $(document).ready(function() {
    var loc = window.location;
-   var url = loc.origin+loc.pathname+'data.json';
+   var  pn = loc.pathname;
+        pn = pn.replace(pn.substring(pn.lastIndexOf('/')+1, pn.length), '');
+   var url = loc.origin+pn+'data.json';
    $('#header #selector input').val(url);
    setup(url);
    $('#header #explore').click(function() {
@@ -75,7 +77,7 @@ function add_resource(resource, config, i) {
       html += '<div class="title">'+config['title']+'</div>';
       html += '<div class="menu"> <a href="#" onclick="toggleMethods('+i+')">Show/Hide</a> | <a href="#" onclick="showJSON()">Raw</a> </div>';
       html += '</div>';
-      html += add_section(resource, config['sections']['config'], config['sections']['entries'], i);
+      html += add_section(resource, config['config'], config['config'], i);
     $('.resources').append(html);
     $('#resource'+i+' .content').toggle()
     $('#resource'+i+' .method .url a').click(function(event) {

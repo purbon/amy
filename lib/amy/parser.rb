@@ -27,7 +27,7 @@ module Amy
         resource_spec = JSON.parse(IO.read(File.join(File.join(dir, options['dir']),"resource.def")))
         resource_page = Amy::Model::Resource.new(File.join(dir, options['dir']), resource_spec, options['dir'], options['title'])
         resource_page.build
-        options['sections'] = resource_page.sections
+        options['config'] = resource_page.sections['config']
       }
       File.open("#{Amy::BASE_DIR}/views/js/data.json", 'w') do |f|
         f.write(specs.to_json)

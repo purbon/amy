@@ -2,11 +2,11 @@
   "name"    : "org",
   "title"   : "A single organization",
   "config" : {
-      "get"     : { "url": "/orgs/:org", "desc": "Get\"s the given organization stored data" },
-      "head"    : { "url": "/orgs/:org", "desc": "Return the server headers, without the body" },
-      "options" : { "url": "/orgs/:org", "desc": "Get\"s the list of valid HTTP verbs" },
-      "put"     : { "url": "/orgs/:org", "desc": "Updates or add data to a previously created organization" },
-      "monitor" : { "url": "/orgs/:org", "desc": "Monitor the resouce throw SSE" },
-      "delete"  : { "url" : "/orgs/belectric_its", "desc": "Deletes a given organization" }
+      "get"     : { "url": "/orgs/:org", "title": "Get\"s the given organization stored data" },
+      "head"    : { "url": "/orgs/:org", "title": "Return the server headers, without the body" },
+      "options" : { "url": "/orgs/:org", "title": "Get\"s the list of valid HTTP verbs" },
+      "put"     : { "url": "/orgs/:org", "title": "Updates or add data to a previously created organization" },
+      "monitor" : { "url": "/orgs/:org", "title": "Monitor the resouce throw SSE" },
+      "delete"  : { "url" : "/orgs/belectric_its", "title": "Deletes a given organization" }
   }
 }

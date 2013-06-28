@@ -2,10 +2,10 @@
   "name"    : "maps",
   "title"   : "An API for dealing with maps",
   "config" : {
-    "get"     : { "url": "/orgs/:org/maps", "desc": "Gets the list of maps in an organization" },
-    "create"  : { "url": "/orgs/:org/maps", "desc": "Adds a new map" },
-    "head"    : { "url": "/orgs/:org/maps", "desc": "Return the server headers, without the body" },
-    "options" : { "url": "/orgs/:org/maps", "desc": "Get\"s the list of valid HTTP verbs" },
-    "monitor" : { "url": "/orgs/:org/maps", "desc": "Monitor the resouce throw SSE" }
+    "get"     : { "url": "/orgs/:org/maps", "title": "Gets the list of maps in an organization" },
+    "create"  : { "url": "/orgs/:org/maps", "title": "Adds a new map" },
+    "head"    : { "url": "/orgs/:org/maps", "title": "Return the server headers, without the body" },
+    "options" : { "url": "/orgs/:org/maps", "title": "Get\"s the list of valid HTTP verbs" },
+    "monitor" : { "url": "/orgs/:org/maps", "title": "Monitor the resouce throw SSE" }
   }
 }

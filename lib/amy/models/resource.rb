@@ -17,13 +17,13 @@ module Amy::Model
     def build
      resources = Dir.new(@dir)
      to_skip   = [ '.', '..', 'resource.def' ]
-     record    = { 'entries' => {}, 'config' => @specs['config'] }
+     record    = { 'config' => @specs['config'] }
      resources.entries.each do |entry|
         next if to_skip.include?(entry)
         content = load_file File.join(resources.path, entry)
         method  = find_method_name entry
         doc     = Maruku.new(content)
-        record['entries'][method] = doc.to_html
+        record['config'][method.downcase]['content'] = doc.to_html
      end
      @sections = record
     end
