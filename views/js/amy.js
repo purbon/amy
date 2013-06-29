@@ -26,10 +26,11 @@ function toggle(element) {
 
  function setup(jsonfile) {
    $.ajax({
-     url: jsonfile,
+     url: jsonfile+"?date="+(new Date()).getTime(),
      type: "GET",
      dataType: "json",
      success: function(data) {
+       $('.resources div').remove();
        var resources = Object.keys(data['resources']);
        for(var i=0; i < resources.length; i++) {
          var resource = data['resources'][resources[i]];
@@ -43,7 +44,8 @@ function toggle(element) {
        $(anchor).next().fadeToggle();
      },
      error: function(e) {
-       $('.resources').remove()
+       console.log(e);
+       $('.resources div').remove()
      }
    });
  }
