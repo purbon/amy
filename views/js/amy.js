@@ -97,7 +97,7 @@ function add_section(resource, config, entries, i) {
         html += '<div class="header">';
         html += '<div class="name '+methods[i]+'">'+methods[i]+'</div>';
         html += '<div class="url"><a href="#">'+field['url']+'</a></div>';
-        html += '<div class="desc">'+field['desc']+'</div>';
+        html += '<div class="desc">'+field['title']+'</div>';
         html += '</div>';
         html += '<div class="content">'+content+'</div>';
         html += '</div>';
