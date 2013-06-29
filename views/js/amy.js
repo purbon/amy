@@ -37,7 +37,7 @@ function toggle(element) {
          add_resource(resources[i], resource, i);
          $('#resource'+i).toggle();
        }
-       add_resource_events();
+       add_resource_events(data);
        var anchor = window.location.hash.replace('!','');
        anchor = anchor.replace(/\//g,"\\/");
          anchor = anchor.replace(/:/g,'\\:');
@@ -59,7 +59,7 @@ function toggleMethods(i) {
   event.stopPropagation();
   $('#resource'+i).fadeToggle();
 }
-function add_resource_events() {
+function add_resource_events(data) {
   $(".resource").hover(function(){
     $(this).css("background", "#f5f5f5");
     $(this).children('div').children().css('color', 'black');
@@ -71,6 +71,10 @@ function add_resource_events() {
     event.stopPropagation();
     $(event.delegateTarget).next().fadeToggle();
   });
+  $('.methods .get .form input[type=button]').click(function(event) {
+    console.log($(this).parent().parent().parent()[0]);
+    console.log(data);
+  });
 }
 function add_resource(resource, config, i) {
   var html  = '<div class="resource" id="'+resource+'">';
@@ -80,10 +84,34 @@ function add_resource(resource, config, i) {
       html += '</div>';
       html += add_section(resource, config['config'], config['config'], i);
     $('.resources').append(html);
-    $('#resource'+i+' .content').toggle()
+    $('#resource'+i+' .content').toggle();
+    $('#resource'+i+' .form').toggle();
     $('#resource'+i+' .method .url a').click(function(event) {
-        $(this).parent().parent().next().fadeToggle();
+      $(this).parent().parent().next().next().fadeToggle();
+      $(this).parent().parent().next().fadeToggle();
     });
+}
+
+function add_form(method, config) {
+  var html = '';
+  var params = config['params'] || [];
+  if (method == "get") {
+      html += '<form>';
+      for(var i=0; i < params.length; i++) {
+        html += "<div class='field'>";
+        html += "<label>:"+params[i][0]+" <small>("+params[i][1]+")</small></label>";
+        html += '<input type="text" id="'+params[i][0]+'"></input>';
+        html += '</div>';
+      }
+      html += '<input type="button" value="Submit"></input>';
+      html += '</form>';
+      html += '<div class="output"></div>';
+  }
+  return html;
+}
+
+function executeGetMethod(method, config) {
+  console.log(config);
 }
 
 function add_section(resource, config, entries, i) {
@@ -98,6 +126,7 @@ function add_section(resource, config, entries, i) {
         html += '<div class="url"><a href="#">'+field['url']+'</a></div>';
         html += '<div class="desc">'+field['title']+'</div>';
         html += '</div>';
+        html += '<div class="form">'+add_form(methods[i].toLowerCase(), entries[methods[i].toLowerCase()])+'</div>';
         html += '<div class="content">'+content+'</div>';
         html += '</div>';
   }
