@@ -92,7 +92,7 @@ function add_section(resource, config, entries, i) {
   var methods = Object.keys(config);
   for(var i=0; i < methods.length; i++) {
         var field   = config[methods[i]];
-        var content = entries[methods[i].toUpperCase()];
+        var content = entries[methods[i].toLowerCase()]['content'];
         html += '<div class="method '+methods[i]+'">';
         html += '<div class="header">';
         html += '<div class="name '+methods[i]+'">'+methods[i]+'</div>';
