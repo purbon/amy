@@ -44,7 +44,6 @@ function toggle(element) {
        $(anchor).next().fadeToggle();
      },
      error: function(e) {
-       console.log(e);
        $('.resources div').remove()
      }
    });
