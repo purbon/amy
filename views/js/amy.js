@@ -40,8 +40,11 @@ function toggle(element) {
        add_resource_events(data);
        var anchor = window.location.hash.replace('!','');
        anchor = anchor.replace(/\//g,"\\/");
-         anchor = anchor.replace(/:/g,'\\:');
-       $(anchor).next().fadeToggle();
+       anchor = anchor.replace(/:/g,'\\:');
+       fields = anchor.split('#');
+       $("#"+fields[1]+" + div .method."+fields[2]+" .content").fadeToggle();
+       $("#"+fields[1]+" + div .method."+fields[2]+" .form").fadeToggle();
+       $("#"+fields[1]).next().fadeToggle();
      },
      error: function(e) {
        $('.resources div').remove()
@@ -123,7 +126,7 @@ function add_section(resource, config, entries, i) {
         html += '<div class="method '+methods[i]+'">';
         html += '<div class="header">';
         html += '<div class="name '+methods[i]+'">'+methods[i]+'</div>';
-        html += '<div class="url"><a href="#">'+field['url']+'</a></div>';
+        html += '<div class="url"><a href="#!'+resource+'#'+methods[i].toLowerCase()+'">'+field['url']+'</a></div>';
         html += '<div class="desc">'+field['title']+'</div>';
         html += '</div>';
         html += '<div class="form">'+add_form(methods[i].toLowerCase(), entries[methods[i].toLowerCase()])+'</div>';
