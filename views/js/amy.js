@@ -83,7 +83,7 @@ function add_resource_events(data) {
             params[$(n).attr('id')] = $(n).val();
         });
     var config = data['resources'][oid]['config']['get'];
-    executeGetMethod('get', config, params);
+    executeGetMethod('get', data['base_url'], config, params);
   });
 }
 function add_resource(resource, config, i) {
@@ -120,8 +120,8 @@ function add_form(method, config) {
   return html;
 }
 
-function executeGetMethod(method, config, params) {
-  var url  = "http://localhost:1884"+config['url'];
+function executeGetMethod(method, base_url, config, params) {
+  var url  = base_url+config['url'];
   var oids = Object.keys(params);
   for(var i=0; i < oids.length; i++) {
     url  = url.replace(':'+oids[i], params[oids[i]]);
