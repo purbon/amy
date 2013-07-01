@@ -75,8 +75,15 @@ function add_resource_events(data) {
     $(event.delegateTarget).next().fadeToggle();
   });
   $('.methods .get .form input[type=button]').click(function(event) {
-    console.log($(this).parent().parent().parent()[0]);
-    console.log(data);
+    var oid = $(event.target).parentsUntil(".methods")
+        oid = $($(oid)[oid.length-1]).parent().prev().attr('id');
+    var fields = $(event.target).parent().children('.field').children('input');
+    var params = {};
+        $.each(fields, function(i, n) {
+            params[$(n).attr('id')] = $(n).val();
+        });
+    var config = data['resources'][oid]['config']['get'];
+    executeGetMethod('get', config, params);
   });
 }
 function add_resource(resource, config, i) {
@@ -113,8 +120,15 @@ function add_form(method, config) {
   return html;
 }
 
-function executeGetMethod(method, config) {
-  console.log(config);
+function executeGetMethod(method, config, params) {
+  var url  = "http://localhost:1884"+config['url'];
+  var oids = Object.keys(params);
+  for(var i=0; i < oids.length; i++) {
+    url  = url.replace(':'+oids[i], params[oids[i]]);
+  }
+  $.get(url, function(data) {
+    console.log(data);
+  });
 }
 
 function add_section(resource, config, entries, i) {
