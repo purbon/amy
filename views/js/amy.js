@@ -82,8 +82,9 @@ function add_resource_events(data) {
         $.each(fields, function(i, n) {
             params[$(n).attr('id')] = $(n).val();
         });
+    var outputField = $(event.target).parent().siblings('.output');
     var config = data['resources'][oid]['config']['get'];
-    executeGetMethod('get', data['base_url'], config, params);
+    executeGetMethod('get', data['base_url'], config, params, outputField);
   });
 }
 function add_resource(resource, config, i) {
@@ -120,14 +121,14 @@ function add_form(method, config) {
   return html;
 }
 
-function executeGetMethod(method, base_url, config, params) {
+function executeGetMethod(method, base_url, config, params, outputField) {
   var url  = base_url+config['url'];
   var oids = Object.keys(params);
   for(var i=0; i < oids.length; i++) {
     url  = url.replace(':'+oids[i], params[oids[i]]);
   }
   $.get(url, function(data) {
-    console.log(data);
+    outputField.text(JSON.stringify(data));
   });
 }
 
