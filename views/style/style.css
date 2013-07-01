@@ -375,9 +375,21 @@ code {
 }
 
 .form {
+  display: table;
   margin-left: 5%;
+  width: 90%;
 }
 
 .form form a {
   margin-top: 5px;
+}
+
+.form form {
+  display: table-cell;
+  width: 40%;
+}
+.output {
+  display: table-cell;
+  width: 60%;
+  height: 200px;
 }
