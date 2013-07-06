@@ -116,7 +116,7 @@ function add_form(method, config) {
       }
       html += '<input type="button" value="Submit"></input>';
       html += '</form>';
-      html += '<div class="output"></div>';
+      html += '<textarea class="output"></textarea>';
   }
   return html;
 }
