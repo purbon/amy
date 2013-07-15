@@ -76,15 +76,41 @@ function add_resource_events(data) {
   });
   $('.methods .get .form input[type=button]').click(function(event) {
     var oid = $(event.target).parentsUntil(".methods")
-        oid = $($(oid)[oid.length-1]).parent().prev().attr('id');
+    oid = $($(oid)[oid.length-1]).parent().prev().attr('id');
     var fields = $(event.target).parent().children('.field').children('input');
     var params = {};
-        $.each(fields, function(i, n) {
-            params[$(n).attr('id')] = $(n).val();
-        });
+    $.each(fields, function(i, n) {
+      params[$(n).attr('id')] = $(n).val();
+    });
     var outputField = $(event.target).parent().siblings('.output');
     var config = data['resources'][oid]['config']['get'];
     executeGetMethod('get', data['base_url'], config, params, outputField);
+  });
+    
+  $('.methods .options .form input[type=button]').click(function(event) {
+    var oid = $(event.target).parentsUntil(".methods")
+    oid = $($(oid)[oid.length-1]).parent().prev().attr('id');
+    var fields = $(event.target).parent().children('.field').children('input');
+    var params = {};
+    $.each(fields, function(i, n) {
+      params[$(n).attr('id')] = $(n).val();
+    });
+    var outputField = $(event.target).parent().siblings('.output');
+    var config = data['resources'][oid]['config']['options'];
+    executeMethod('options', data['base_url'], config, params, outputField);
+  });
+
+  $('.methods .head .form input[type=button]').click(function(event) {
+    var oid = $(event.target).parentsUntil(".methods")
+    oid = $($(oid)[oid.length-1]).parent().prev().attr('id');
+    var fields = $(event.target).parent().children('.field').children('input');
+    var params = {};
+    $.each(fields, function(i, n) {
+      params[$(n).attr('id')] = $(n).val();
+    });
+    var outputField = $(event.target).parent().siblings('.output');
+    var config = data['resources'][oid]['config']['head'];
+    executeMethod('head', data['base_url'], config, params, outputField);
   });
 }
 function add_resource(resource, config, i) {
@@ -106,7 +132,7 @@ function add_resource(resource, config, i) {
 function add_form(method, config) {
   var html = '';
   var params = config['params'] || [];
-  if (method == "get") {
+  if (method == "get" || method == "options" || method == "head") {
       html += '<form>';
       for(var i=0; i < params.length; i++) {
         html += "<div class='field'>";
@@ -129,6 +155,22 @@ function executeGetMethod(method, base_url, config, params, outputField) {
   }
   $.get(url, function(data) {
     outputField.text(JSON.stringify(data));
+  });
+}
+
+function executeMethod(method, base_url, config, params, outputField) {
+  var url  = base_url+config['url'];
+  var oids = Object.keys(params);
+  for(var i=0; i < oids.length; i++) {
+    url  = url.replace(':'+oids[i], params[oids[i]]);
+  }
+  $.ajax({
+    type: method,
+    async: true,
+    url: url,
+    success: function(data) {
+      outputField.text(JSON.stringify(data));
+    }
   });
 }
 
