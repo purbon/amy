@@ -110,7 +110,7 @@ function add_resource_events(data) {
     });
     var outputField = $(event.target).parent().siblings('.output');
     var config = data['resources'][oid]['config']['head'];
-    executeMethod('head', data['base_url'], config, params, outputField);
+    executeMethod('HEAD', data['base_url'], config, params, outputField);
   });
 }
 function add_resource(resource, config, i) {
