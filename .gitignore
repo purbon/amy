@@ -18,3 +18,5 @@ data2.json
 .yardoc
 _yardoc
 doc/
+doc.old/
+examples-scheduler/

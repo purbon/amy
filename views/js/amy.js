@@ -178,11 +178,12 @@ function add_section(resource, config, entries, i) {
   var html  = '<div class="methods" id="resource'+i+'">';
   var methods = Object.keys(config);
   for(var i=0; i < methods.length; i++) {
+        var method_name = methods[i].replace(/(\d+)/g,'');
         var field   = config[methods[i]];
         var content = entries[methods[i].toLowerCase()]['content'];
-        html += '<div class="method '+methods[i]+'">';
+        html += '<div class="method '+method_name+'">';
         html += '<div class="header">';
-        html += '<div class="name '+methods[i]+'">'+methods[i]+'</div>';
+        html += '<div class="name '+method_name+'">'+method_name+'</div>';
         html += '<div class="url"><a href="#!'+resource+'#'+methods[i].toLowerCase()+'">'+field['url']+'</a></div>';
         html += '<div class="desc">'+field['title']+'</div>';
         html += '</div>';
