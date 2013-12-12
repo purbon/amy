@@ -25,7 +25,6 @@ GEM
     highline (1.6.20)
     httpauth (0.2.0)
     i18n (0.6.9)
-    iconv (1.0.4)
     jeweler (1.8.8)
       builder
       bundler (~> 1.0)
@@ -78,7 +77,6 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
-  iconv
   jeweler (~> 1.8.3)
   json
   maruku
