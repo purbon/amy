@@ -21,3 +21,5 @@ doc/
 doc.old/
 examples-scheduler/
 specs/
+
+views/js/data.json
