@@ -30,6 +30,9 @@ Gem::Specification.new do |s|
   s.rubygems_version = "1.8.17"
   s.summary = "Amy is the REST api stenographer"
 
+  s.add_dependency('json')
+  s.add_dependency('maruku')
+
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
