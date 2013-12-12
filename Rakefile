@@ -24,6 +24,10 @@ Jeweler::Tasks.new do |gem|
   # dependencies defined in Gemfile
   gem.files = Dir['lib/**/*.rb', 'views/**/*']
   gem.executables = ["amy"]
+  gem.add_dependency 'json'
+  gem.add_dependency 'iconv'
+  gem.add_dependency 'maruku'
+
 end
 Jeweler::RubygemsDotOrgTasks.new
 
