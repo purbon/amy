@@ -19,7 +19,6 @@ data2.json
 _yardoc
 doc/
 examples-scheduler/
-specs/
 
-views/js/data.json
 specs/
+views/js/data.json
