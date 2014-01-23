@@ -1,0 +1,10 @@
+ ### Delete a collection of registered jobs
+
+* param **collection** _String_ The job collection
+* return _Hash_ The job ID
+
+### Example:
+
+curl -X DELETE [http://api.linkedenergy.eu:1884/registry/icarus](http://api.linkedenergy.eu:1884/registry/icarus)
+
+> "Icarus"

@@ -1,0 +1,15 @@
+### Gets info about all registered jobs running under the scheduler
+
+* return _Hash_ All job data
+
+### Example:
+
+curl -XGET [http://scheduler.linkedenergy.eu:4000/registry](http://scheduler.linkedenergy.eu:4000/registry)
+
+> {
+>>  "Rufus::Scheduler::CronJob_5022": {
+>>>    "status": { "paused": false,  "running": false },
+>>>    "info":   { "collection": "icarus", "name": "echo", "pattern": "* * * * *", "options": { "message": "demo dummy" }}
+>> }
+> }
+

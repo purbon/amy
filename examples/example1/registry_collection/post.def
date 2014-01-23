@@ -1,0 +1,14 @@
+### Lets the user register a new job able to be run into the scheduler
+
+* param **config** _Hash_   A collection of properties defining the new job
+* param **jar**    _String_ The job jar
+* param **name**   _String_ The job alias
+* param **class**  _String_ The job runner class
+* param **params** _Hash_   A collection of params to be use while running the job
+
+* return _Hash_ The job status
+
+### Example:
+
+curl -XPOST { config => {} } [http://scheduler.linkedenergy.eu:4000/registry](http://scheduler.linkedenergy.eu:4000/registry)
+

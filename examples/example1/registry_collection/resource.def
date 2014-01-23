@@ -1,0 +1,10 @@
+{
+  "name"    : "registry_collection",
+  "title"   : "Operations to manage the registry",
+  "config" : {
+      "post"    : { "url": "/registry/:collection/:name", "params": [["collection", "string"],["name", "string"]], "title": "Add a new job to the registry" },
+      "delete0"  : { "url": "/registry/:collection/:name", "params": [["collection", "string"],["name", "string"]], "title": "Remove a job from the registry" },
+      "delete1"    : { "url": "/registry/:collection", "params": [["collection", "string"]], "title": "Add a collection of jobs from the registry" }
+
+  }
+}

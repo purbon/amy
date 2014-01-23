@@ -1,0 +1,7 @@
+{
+  "name"    : "registry",
+  "title"   : "List of available jobs",
+  "config" : {
+      "get"     : { "url": "/registry", "title": "Get\"s info about al registered jobs" }
+  }
+}

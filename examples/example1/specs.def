@@ -1,0 +1,14 @@
+{
+    "resources": {
+        "/registry": {
+            "dir": "registry",
+            "title": "List of available jobs under the system"
+        },
+        "/registry/:collection/:name": {
+            "dir"   : "registry_collection",
+            "title" : "Set of operations to manage the registry"
+        }
+    },
+    "base_url" : "http://scheduler.linkedenergy.eu:4000",
+    "api_version" : "1.0"
+}
