@@ -57,7 +57,7 @@ module Amy
     def copy_styles_and_js
       base_dir = @generator.base_dir
       Dir.mkdir("#{base_dir}/js")
-      FileUtils.cp("#{Amy::BASE_DIR}/views/js/amy.js", "#{base_dir}/js/amy.js")
+      FileUtils.cp("#{Amy::BASE_DIR}/views/js/amy.min.js", "#{base_dir}/js/amy.js")
       FileUtils.cp("#{Amy::BASE_DIR}/views/js/data.json", "#{base_dir}/data.json")      
       Dir.mkdir("#{base_dir}/style")
       FileUtils.cp("#{Amy::BASE_DIR}/views/style/style.css", "#{base_dir}/style/style.css")
