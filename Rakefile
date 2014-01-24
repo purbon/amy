@@ -51,7 +51,8 @@ namespace :dev do
     parser.execute args[:source]
   end
   desc "Compile and minimize the generated js files"
-  task :compilejs do 
+  task :compilejs do
+    puts "Compiling JS using the coffeescript compiler"
     `coffee -j views/js/amy.js -c views/js`
     require 'uglifier'
     File.open("views/js/amy.min.js", "w") do |file| 
@@ -61,6 +62,7 @@ namespace :dev do
   task :build => :compilejs
 end
 
+task :build => 'dev:compilejs'
 task :default => :spec
 
 require 'rdoc/task'
