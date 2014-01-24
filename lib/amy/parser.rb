@@ -11,11 +11,6 @@ module Amy
       specs  = load_specs dir
       compile_json_specs_with dir, specs
       generate_main_page_with specs
-      #specs['resources'].each_pair do | resource, options|
-      #  puts "Generating resource documentation of #{options['title']}"
-      #  name = options['dir']
-      #  parse_a_resource File.join(dir, name), name, options['title']
-      #end
       copy_styles_and_js
       true
     end
