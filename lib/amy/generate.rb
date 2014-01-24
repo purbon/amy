@@ -1,6 +1,5 @@
 require 'erb'
-require 'amy/models/main'
-require 'amy/models/resource'
+require 'amy/templates/main'
 
 module Amy
   class Generator

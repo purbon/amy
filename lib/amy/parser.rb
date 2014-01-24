@@ -1,4 +1,5 @@
 require 'fileutils'
+require 'maruku'
 
 module Amy
   class Parser
@@ -19,14 +20,26 @@ module Amy
 
     def compile_json_specs_with(dir, specs)
       specs['resources'].each_pair { |resource, options|
-        resource_spec = JSON.parse(IO.read(File.join(File.join(dir, options['dir']),"resource.def")))
-        resource_page = Amy::Model::Resource.new(File.join(dir, options['dir']), resource_spec, options['dir'], options['title'])
-        resource_page.build
-        options['config'] = resource_page.sections['config']
+         resource_spec = JSON.parse(IO.read(File.join(File.join(dir, options['dir']),"resource.def")))
+         options['config'] = build_resource File.join(dir, options['dir']), resource_spec
       }
       File.open("#{Amy::BASE_DIR}/views/js/data.json", 'w') do |f|
         f.write(specs.to_json)
       end
+    end
+
+    def build_resource(dir, specs)
+     resources = Dir.new(dir)
+     to_skip   = [ '.', '..', 'resource.def' ]
+     record    = { 'config' => specs['config'] }
+     resources.entries.each do |entry|
+        next if to_skip.include?(entry)
+        content = IO.read File.join(resources.path, entry)
+        method  = File.basename(entry, File.extname(entry)).upcase
+        doc     = Maruku.new(content)
+        record['config'][method.downcase]['content'] = doc.to_html
+     end
+     record['config']
     end
 
     def parse_a_resource(dir, name, title)
