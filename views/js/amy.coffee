@@ -13,7 +13,7 @@ class Tabelle
           $('.resources div').remove()
           i = 0
           for resource,config of data['resources']
-            resource = self.add_resource(resource, config, i)
+            resource = self.add_resource(resource, config, i, data['base_url'])
             resource.toggle()
             i++
           self.add_resource_events(data)
@@ -23,8 +23,8 @@ class Tabelle
    $.ajax request_config
    return
 
-  add_resource: (name, resource, i) ->
-      resource = new Resource(name, resource, i)
+  add_resource: (name, resource, i, base_url="") ->
+      resource = new Resource(name, resource, i, base_url)
       resource.build()
       return resource
 

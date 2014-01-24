@@ -1,9 +1,10 @@
 class Resource
 
-   constructor: (resource, config, i) ->
+   constructor: (resource, config, i, base_url) ->
      @resource = resource
      @config   = config
-     @i    = i
+     @i        = i
+     @base_url = base_url
      return
   
    toggle: ->
@@ -13,6 +14,10 @@ class Resource
    build: ->
      html = this.build_html(@resource, @config, @i)
      $('.resources').append(html)
+     for method, data of @config['config']
+         runner = new MethodRunner(method, @config['config'], @base_url, @i)
+         runner.attach_to_form()
+
      $("#resource#{@i} .content").toggle()
      $("#resource#{@i} .form").toggle()
      $("#resource#{@i} .method .url a").click (event) -> 
@@ -40,10 +45,13 @@ class Resource
         html += "<div class='url'><a href='#!#{resource}##{method.toLowerCase()}'>#{field['url']}</a></div>"
         html += "<div class='desc'>#{field['title']}</div>"
         html += '</div>'
-        #html += "<div class='form'>#{add_form(method.toLowerCase(), entries[method.toLowerCase()])}</div>"
+        html += "<div class='form'>#{this.add_form(method.toLowerCase(), entries[method.toLowerCase()])}</div>"
         html += "<div class='content'>#{content}</div>"
         html += "</div>"
      html += '</div>'
      return html
   
+   add_form: (method, config) ->
+     form = new ResourceForm(method, config)
+     return form.build()
 
