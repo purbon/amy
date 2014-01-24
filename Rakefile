@@ -46,11 +46,6 @@ Dir.glob('lib/**').each{ |d| $LOAD_PATH.unshift(File.join(ROOT, d)) }
 namespace :dev do
   desc "Build and run the current gem version, no need to install it"
   task :build, [:source] do |t, args|
-    `coffee -j views/js/amy.js -c views/js`
-    require 'uglifier'
-    File.open("views/js/amy.min.js", "w") do |file| 
-      file.write Uglifier.compile(File.read("views/js/amy.js"))
-    end
     require 'amy'
     parser = Amy::Parser.new
     parser.execute args[:source]
@@ -63,6 +58,7 @@ namespace :dev do
       file.write Uglifier.compile(File.read("views/js/amy.js"))
     end
   end
+  task :build => :compilejs
 end
 
 task :default => :spec
