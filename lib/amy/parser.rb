@@ -42,11 +42,6 @@ module Amy
      record['config']
     end
 
-    def parse_a_resource(dir, name, title)
-      resource = JSON.parse(IO.read(File.join(dir,"resource.def")))
-      generate_resource_page_with dir, resource, name, title
-    end
-
     def generate_main_page_with(specs)
       main_page = Amy::Model::Main.new
       specs['resources'].each_pair { |resource, options|
@@ -56,12 +51,6 @@ module Amy
       main_page.set_version  specs['api_version']
       main_page.set_base_url specs['base_url']
       @generator.do("#{Amy::BASE_DIR}/views/main.erb.html", main_page)
-    end
-    
-    def generate_resource_page_with(dir, specs, name, title)
-      resource_page = Amy::Model::Resource.new(dir, specs, name, title)
-      resource_page.build
-      @generator.do("#{Amy::BASE_DIR}/views/resource.erb.html", resource_page)
     end
 
     def load_specs(dir)
