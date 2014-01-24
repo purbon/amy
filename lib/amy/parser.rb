@@ -31,15 +31,15 @@ module Amy
     def build_resource(dir, specs)
      resources = Dir.new(dir)
      to_skip   = [ '.', '..', 'resource.def' ]
-     record    = { 'config' => specs['config'] }
+     record    = specs['config']
      resources.entries.each do |entry|
         next if to_skip.include?(entry)
         content = IO.read File.join(resources.path, entry)
         method  = File.basename(entry, File.extname(entry)).upcase
         doc     = Maruku.new(content)
-        record['config'][method.downcase]['content'] = doc.to_html
+        record[method.downcase]['content'] = doc.to_html
      end
-     record['config']
+     record
     end
 
     def generate_main_page_with(specs)
