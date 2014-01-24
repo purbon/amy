@@ -1,7 +1,3 @@
-ROOT = File.expand_path(File.dirname(__FILE__))
-$LOAD_PATH.unshift File.join(ROOT, 'lib')
-Dir.glob('lib/**').each{ |d| $LOAD_PATH.unshift(File.join(ROOT, d)) }
-
 namespace :dev do
   desc "Build and run the current gem version, no need to install it"
   task :build, [:source] do |t, args|
