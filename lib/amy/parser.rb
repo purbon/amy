@@ -39,6 +39,7 @@ module Amy
       specs['resources'].each_pair { |resource, options|
          main_page.add_resource( { 'resource' => resource, 'title' => options['title'] } )
       }
+      main_page.set_links    specs['links'] || []
       main_page.set_version  specs['api_version']
       main_page.set_base_url specs['base_url']
       @generator.do("#{Amy::BASE_DIR}/views/main.erb.html", main_page)

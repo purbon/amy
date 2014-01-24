@@ -17,8 +17,21 @@
         </form>
       </div>
       <div id="body">
-        <div class="resources">
+        <% unless @links.empty? %>
+        <div class="navmenu">
+          <div id="navigation_container">
+            <div class="rectangle">
+              <ul class="navigation_bar">
+                <li> <h3>Quick links</h3> </li>
+                <% @links.each do |link| %>
+                <li><a href="<%= "#{@base_url}#{link[1]}" %>"><%= link[0] %></a></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
         </div>
+        <% end %>
+        <div class="resources"></div>
         <div class="footer">
           [ <div class="base_url"> BASE_URL: <%= @base_url %> </div> | <div class="version"> API_VERSION: <%= @apiversion %></div> ]
         </div>

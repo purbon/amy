@@ -9,6 +9,10 @@
             "title" : "Set of operations to manage the registry"
         }
     },
+    "links" : [
+         ["The system monitor", "/monitor"],
+         ["The reporting site", "/charts"]
+    ],
     "base_url" : "http://scheduler.linkedenergy.eu:4000",
     "api_version" : "1.0"
 }
