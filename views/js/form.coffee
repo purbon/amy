@@ -16,8 +16,8 @@ class ResourceForm
      html = '<form>'
      for param in params
         html += "<div class='field'>"
-        html += "<label>:#{params[0]}<small>(#{params[1]})</small></label>"
-        html += "<input type='text' id='#{params[0]}'></input>"
+        html += "<label>:#{param[0]}<small>(#{param[1]})</small></label>"
+        html += "<input type='text' id='#{param[0]}'></input>"
         html += '</div>'
      html += '<input type="button" value="Submit"></input>'
      html += '</form>'

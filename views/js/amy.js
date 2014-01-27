@@ -130,8 +130,8 @@
       for (_i = 0, _len = params.length; _i < _len; _i++) {
         param = params[_i];
         html += "<div class='field'>";
-        html += "<label>:" + params[0] + "<small>(" + params[1] + ")</small></label>";
-        html += "<input type='text' id='" + params[0] + "'></input>";
+        html += "<label>:" + param[0] + "<small>(" + param[1] + ")</small></label>";
+        html += "<input type='text' id='" + param[0] + "'></input>";
         html += '</div>';
       }
       html += '<input type="button" value="Submit"></input>';

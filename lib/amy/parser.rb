@@ -93,6 +93,12 @@ module Amy
             defs.each do |_def|
               data[_def.url] = { 'title' => '', 'config' => {} } if data[_def.url].nil?
               record = { 'url' => _def.url, 'title' => _def.get_props["@title"], 'content' => '' }
+              if _def.get_props['@params'] then
+                record['params'] = []
+                _def.get_props['@params'].each_pair do |k,v|
+                  record['params'] << [k,v]
+                end
+              end
               data[_def.url]['config'][_def.method] = record
             end
           end
