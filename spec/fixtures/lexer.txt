@@ -26,6 +26,11 @@ class App < Sinatra::Application
   # @description
   # It displays the documentation index as a front 
   # page for the hole API resource
+  # @content
+  # * return _Hash_ All job data
+  # * Example:
+  # curl -XGET BASE_URL/registry
+  # @end
   ##
   get '/' do
    log 'documentation request'

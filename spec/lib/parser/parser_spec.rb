@@ -27,5 +27,10 @@ describe Parser::Parser do
     params = @defs[1].get_props["@params"]
     params["collection"].should == "string"
   end
+
+  it "should grab the content code properly" do
+    content = @defs.first.get_props['@content']
+    content.should include("return")
+  end
  
 end

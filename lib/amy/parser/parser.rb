@@ -33,21 +33,28 @@ module Parser
       finish = false
       prop   = ""
       value  = ""
+      mode   = :normal
       while (not lexer.eof? and not finish)
         token = lexer.next
-        if token.is_ct? then
+        if :normal == mode and token.is_ct? then
           set_property defs, prop, value
           finish = true
+        elsif :content == mode and token.is_p? and "@end" == token.value then
+          mode = :normal
+          set_property defs, prop, value
         elsif prop.empty? and token.is_p? then
           prop = token.value
+          mode = :content if "@content" == prop
         elsif not prop.empty? and token.is_p? then
           set_property defs, prop, value
           prop = token.value
           value = ""
+          mode = :content if "@content" == prop
         elsif not prop.empty? and token.is_s? then
           value << " #{token.value}"
         end
       end
+      lexer.next
       defs.method = lexer.next.value
       finish = false
       lexer.next

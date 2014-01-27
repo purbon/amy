@@ -30,6 +30,11 @@ class App < Sinatra::Application
   # @name registry
   # @title Get's info about all registered jobs
   # @description List of available jobs under the registry
+  # @content
+  # * return _Hash_ All job data
+  # * Example:
+  # curl -XGET BASE_URL/registry
+  # @end
   ##
   get '/registry' do
     respond_with ::Scheduler.get_registry().to_hash

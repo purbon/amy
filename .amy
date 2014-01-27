@@ -1,4 +1,4 @@
-mode: code
+mode: file
 links:
   - ["The system monitor", "/monitor"]
   - ["The reporting site", "/charts"]

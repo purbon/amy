@@ -99,8 +99,9 @@ module Amy
                   record['params'] << [k,v]
                 end
               end
+              record['content'] = _def.get_props['@content'].gsub(/\n/,'<br/>') if _def.get_props['@content']
               if _def.get_props['@description'] then
-               data[_def.url]['title'] = _def.get_props['@description']
+                data[_def.url]['title'] = _def.get_props['@description']
               end
               data[_def.url]['config'][_def.method] = record
             end

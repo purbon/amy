@@ -376,8 +376,9 @@ code {
 
 .form {
   display: table;
-  margin-left: 5%;
-  width: 90%;
+  /*margin-left: 5%;*/
+  width: 75%;
+  float:right;
 }
 
 .form form a {
@@ -386,12 +387,12 @@ code {
 
 .form form {
   display: table-cell;
-  width: 40%;
+  width: 20%;
   float: left;
 }
 .output {
   display: table-cell;
-  width: 60%;
+  width: 75%;
   height: 200px;
   float: right;
 }

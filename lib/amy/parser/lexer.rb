@@ -91,7 +91,8 @@ module Parser
     end
 
     def single_char?(c)
-      not (c =~ /['|"|#|\/|\\|\[|\]]/).nil?
+      not (c =~ /['|"|#|\/|\\|\[|\]|\.|\n]/).nil?
+
     end
 
     def is_white_space?(c)
