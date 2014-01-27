@@ -1,0 +1,38 @@
+require 'helpers/helpers'
+require 'scheduler/scheduler'
+require 'scheduler/workflow'
+
+
+class App < Sinatra::Application
+ 
+  include Helpers
+
+  before do
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Methods"] = "PUT, GET, POST, DELETE, OPTIONS"
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type"
+
+    http_accept = request.env['HTTP_ACCEPT'].downcase
+    validation = ['*/*', 'application/json', 'text/event-stream'].map do |header_field|
+      http_accept.include?(header_field)
+    end
+    halt 406 unless validation.uniq.include?(true)
+
+    content_type 'application/json'
+  end
+
+  ##
+  # @name Front page
+  # @description
+  # It displays the documentation index as a front page for the hole API resource
+  #
+  ##
+  get '/' do
+   log 'documentation request'
+   redirect 'docs/index.html'
+  end
+
+  get '/registry' do |registry, hash|
+    respond_with ::Scheduler.get_registry().to_hash
+  end
+end
