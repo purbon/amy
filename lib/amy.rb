@@ -1,4 +1,5 @@
 require 'json'
+require 'yaml'
 require 'amy/parser'
 require 'amy/generate'
 

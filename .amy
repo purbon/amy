@@ -1,0 +1,6 @@
+mode: code
+links:
+  - ["The system monitor", "/monitor"]
+  - ["The reporting site", "/charts"]
+api_version: "1.0"
+base_url: "http://scheduler.belectric-data.com"
