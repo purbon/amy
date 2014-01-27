@@ -36,12 +36,12 @@ module Parser
       while (not lexer.eof? and not finish)
         token = lexer.next
         if token.is_ct? then
-          defs.add_prop prop, value.strip
+          set_property defs, prop, value
           finish = true
         elsif prop.empty? and token.is_p? then
           prop = token.value
         elsif not prop.empty? and token.is_p? then
-          defs.add_prop prop, value.strip
+          set_property defs, prop, value
           prop = token.value
           value = ""
         elsif not prop.empty? and token.is_s? then
@@ -62,5 +62,23 @@ module Parser
       return defs
     end
 
+    def set_property(defs, prop, value)
+      if ("@params" == prop) then
+        params = {}
+        fields = value.split(" ")
+        last_key = ""
+        fields.each_with_index do |field, i|
+          if (i%2 == 0) then
+            last_key = field
+          else
+            params[last_key] = field
+            last_key = ""
+          end
+        end
+        defs.add_prop prop, params
+      else
+        defs.add_prop prop, value.strip
+      end
+    end
   end
 end
