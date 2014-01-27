@@ -17,7 +17,7 @@ describe Parser::Lexer do
   describe "#tokenize" do
 
     it "should detect the first token properly" do
-       @lexer.next.should == "require"
+       @lexer.next.value.should == "require"
     end
     
     it "should iterate till the end of the file properly" do

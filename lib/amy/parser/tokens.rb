@@ -1,8 +1,10 @@
 module Parser
   
   module Tokens
-    STRING  = 'string'
-    COMMENT = 'comment'
+    STRING   = 'string'
+    COMMENT  = 'comment'
+    PROPERTY = 'property'
+    TEXT     = 'text'
   end
 
   class Token

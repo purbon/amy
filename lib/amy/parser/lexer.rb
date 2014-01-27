@@ -1,3 +1,5 @@
+require 'amy/parser/tokens'
+
 module Parser
   class Lexer
 
@@ -43,7 +45,7 @@ module Parser
         end
       end
       puts "next" if @debug
-      return token
+      build_token(token)
     end
 
     ##
@@ -94,5 +96,14 @@ module Parser
       eof? or single_char?(c) or !valid_char?(c)
     end
 
+    def build_token(token)
+      type = Parser::Tokens::STRING
+      if (token.start_with?("#"))
+        type = Parser::Tokens::COMMENT
+      elsif (token.start_with?("@")) 
+        type = Parser::Tokens::PROPERTY
+      end
+      Parser::Token.new(type, token, @file.lineno)
+    end
   end
 end
