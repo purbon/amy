@@ -29,6 +29,7 @@ class App < Sinatra::Application
   ##
   # @name registry
   # @title Get's info about all registered jobs
+  # @description List of available jobs under the registry
   ##
   get '/registry' do
     respond_with ::Scheduler.get_registry().to_hash
@@ -40,6 +41,7 @@ class App < Sinatra::Application
   # @params
   #   collection string
   #   name string
+  # @description Operates jobs within the registry
   ##
   get '/registry/:collection/:name' do |collection, name|
     registry = ::Scheduler.get_registry().to_hash
@@ -64,6 +66,7 @@ class App < Sinatra::Application
   # @title Remove a collection of jobs from the registry
   # @params
   #   collection string
+  # @description Operates collection within the registry
   ##
   delete "/registry/:collection" do | collection|
     respond_with ::Scheduler.unregister(collection, '')
@@ -85,6 +88,7 @@ class App < Sinatra::Application
   # @title Get the list of scheduled jobs from a given collection
   # @params
   #   collection string
+  # @description Run job collections within the scheduler
   ##
   get "/jobs/:collection" do |collection|
     respond_with ::Scheduler.list_jobs_from(collection)
@@ -96,6 +100,7 @@ class App < Sinatra::Application
   # @params
   #   collection string
   #   name string
+  # @description Operates jobs with the scheduler
   ##
   get "/jobs/:collection/:name" do |collection, name|
     respond_with ::Scheduler.list_jobs_from(collection, name)

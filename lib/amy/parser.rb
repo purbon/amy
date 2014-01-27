@@ -99,6 +99,9 @@ module Amy
                   record['params'] << [k,v]
                 end
               end
+              if _def.get_props['@description'] then
+               data[_def.url]['title'] = _def.get_props['@description']
+              end
               data[_def.url]['config'][_def.method] = record
             end
           end
