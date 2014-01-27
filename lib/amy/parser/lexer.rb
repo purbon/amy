@@ -31,8 +31,14 @@ module Parser
         if eof? then
           end_of_token = true
         elsif (single_char?(c)) then
-          if (token.empty?)
+          if (token.empty?) then
               token = c
+              next_token = @file.getc
+              if ('#' == token and '#' == next_token) then
+                token << next_token
+              else
+                @file.seek(-1, IO::SEEK_CUR)
+              end
           else
             @file.seek(-1, IO::SEEK_CUR)
           end
@@ -97,13 +103,15 @@ module Parser
     end
 
     def build_token(token)
-      type = Parser::Tokens::STRING
-      if (token.start_with?("#"))
-        type = Parser::Tokens::COMMENT
+      type = Tokens::STRING
+      if (token.start_with?("##"))
+        type = Tokens::COMMENT_TAG
+      elsif (token.start_with?("#"))
+        type = Tokens::COMMENT
       elsif (token.start_with?("@")) 
-        type = Parser::Tokens::PROPERTY
+        type = Tokens::PROPERTY
       end
-      Parser::Token.new(type, token, @file.lineno)
+      Token.new(type, token, @file.lineno)
     end
   end
 end

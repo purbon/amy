@@ -26,6 +26,15 @@ describe Parser::Lexer do
       end
     end
 
+    it "should detect double hash as the begin or end comment tag" do
+      comment = nil
+      while not @lexer.eof? and comment.nil?
+        token = @lexer.next
+        comment = token if token.is_c?
+      end
+      comment.type.should == Parser::Tokens::COMMENT_TAG
+    end
+
   end
 
 end

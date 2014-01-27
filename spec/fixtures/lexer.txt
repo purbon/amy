@@ -22,17 +22,26 @@ class App < Sinatra::Application
   end
 
   ##
-  # @name Front page
+  # @name Front Page
   # @description
-  # It displays the documentation index as a front page for the hole API resource
-  #
+  # It displays the documentation index as a front 
+  # page for the hole API resource
   ##
   get '/' do
    log 'documentation request'
    redirect 'docs/index.html'
   end
 
-  get '/registry' do |registry, hash|
+  ##
+  # @title Scheduler registry
+  # @params
+  #  collection string
+  #  name string
+  # @description
+  # Let's the user grab the complete registry info
+  #
+  ##
+  get '/registry/:registry/:hash' do |registry, hash|
     respond_with ::Scheduler.get_registry().to_hash
   end
 end
