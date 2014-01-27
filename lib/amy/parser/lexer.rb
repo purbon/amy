@@ -4,6 +4,11 @@ module Parser
     def initialize
       @filename = ""
       @file     = nil
+      @debug    = false
+    end
+
+    def set_debug(debug)
+      @debug = debug
     end
 
     def set_input(file)
@@ -20,7 +25,7 @@ module Parser
       token = ""
       while not end_of_token
         c = @file.getc
-        #puts "next c: #{c.inspect} v: #{valid_char?(c)} s: #{single_char?(c)} e: #{is_end_character?(c)}"
+        puts "next c: #{c.inspect} v: #{valid_char?(c)} s: #{single_char?(c)} e: #{is_end_character?(c)}" if @debug
         if eof? then
           end_of_token = true
         elsif (single_char?(c)) then
@@ -37,7 +42,7 @@ module Parser
           end_of_token = (not token.empty?)
         end
       end
-      #puts "next"
+      puts "next" if @debug
       return token
     end
 
@@ -62,7 +67,7 @@ module Parser
       there = false
       while not there
         c = @file.getc
-        #puts "move c:#{c.inspect} v: #{valid_char?(c)} s: #{single_char?(c)}"
+        puts "move c:#{c.inspect} v: #{valid_char?(c)} s: #{single_char?(c)}" if @debug
         if eof? then
           there = true
         elsif single_char?(c) or valid_char?(c) then
@@ -70,7 +75,7 @@ module Parser
           there = true
         end
       end
-      #puts "move"
+      puts "move" if @debug
     end
 
     def valid_char?(c)
