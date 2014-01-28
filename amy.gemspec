@@ -15,8 +15,7 @@ Gem::Specification.new do |s|
   s.executables = ["amy"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.markdown",
-    "README.md"
+    "README.markdown"
   ]
   s.files = [
     "lib/amy.rb",
@@ -30,7 +29,6 @@ Gem::Specification.new do |s|
     "views/js/amy.coffee",
     "views/js/amy.js",
     "views/js/amy.min.js",
-    "views/js/data.json",
     "views/js/form.coffee",
     "views/js/resource.coffee",
     "views/js/utils.coffee",
