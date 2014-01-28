@@ -21,15 +21,13 @@ Jeweler::Tasks.new do |gem|
   gem.name = "amy"
   gem.homepage = "http://github.com/purbon/amy"
   gem.license = "MIT"
-  gem.summary = %Q{Amy is the REST api stenographer}
-  gem.description = %Q{Our REST API stenographer}
+  gem.summary = %Q{A REST API documentation engine}
+  gem.description = %Q{Amy helps us to get a nice web docs, rdoc alike, of our REST API, that we can use as a main reference for users.}
   gem.email = "pere.urbon@gmail.com"
   gem.authors = ["Pere Urbon-Bayes"]
   # dependencies defined in Gemfile
   gem.files = Dir['lib/**/*.rb', 'views/**/*']
   gem.executables = ["amy"]
-  gem.add_dependency 'json'
-  gem.add_dependency 'maruku'
 
 end
 Jeweler::RubygemsDotOrgTasks.new

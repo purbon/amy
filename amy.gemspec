@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Pere Urbon-Bayes"]
   s.date = "2014-01-28"
-  s.description = "Our REST API stenographer"
+  s.description = "Amy helps us to get a nice web docs, rdoc alike, of our REST API, that we can use as a main reference for users."
   s.email = "pere.urbon@gmail.com"
   s.executables = ["amy"]
   s.extra_rdoc_files = [
@@ -39,7 +39,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "2.0.3"
-  s.summary = "Amy is the REST api stenographer"
+  s.summary = "A REST API documentation engine"
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
@@ -53,8 +53,6 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.3"])
       s.add_development_dependency(%q<uglifier>, [">= 0"])
       s.add_development_dependency(%q<rspec>, [">= 0"])
-      s.add_runtime_dependency(%q<json>, [">= 0"])
-      s.add_runtime_dependency(%q<maruku>, [">= 0"])
     else
       s.add_dependency(%q<json>, [">= 0"])
       s.add_dependency(%q<maruku>, [">= 0"])
@@ -64,8 +62,6 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<jeweler>, ["~> 1.8.3"])
       s.add_dependency(%q<uglifier>, [">= 0"])
       s.add_dependency(%q<rspec>, [">= 0"])
-      s.add_dependency(%q<json>, [">= 0"])
-      s.add_dependency(%q<maruku>, [">= 0"])
     end
   else
     s.add_dependency(%q<json>, [">= 0"])
@@ -76,8 +72,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<jeweler>, ["~> 1.8.3"])
     s.add_dependency(%q<uglifier>, [">= 0"])
     s.add_dependency(%q<rspec>, [">= 0"])
-    s.add_dependency(%q<json>, [">= 0"])
-    s.add_dependency(%q<maruku>, [">= 0"])
   end
 end
 
