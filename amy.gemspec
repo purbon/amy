@@ -15,7 +15,8 @@ Gem::Specification.new do |s|
   s.executables = ["amy"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.markdown"
+    "README.markdown",
+    "README.md"
   ]
   s.files = [
     "lib/amy.rb",
@@ -29,6 +30,7 @@ Gem::Specification.new do |s|
     "views/js/amy.coffee",
     "views/js/amy.js",
     "views/js/amy.min.js",
+    "views/js/data.json",
     "views/js/form.coffee",
     "views/js/resource.coffee",
     "views/js/utils.coffee",
@@ -40,9 +42,6 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rubygems_version = "2.0.3"
   s.summary = "Amy is the REST api stenographer"
-
-  s.add_dependency('json')
-  s.add_dependency('maruku')
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
