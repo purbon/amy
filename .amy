@@ -1,6 +1,6 @@
 mode: file
 links:
   - ["The system monitor", "/monitor"]
-  - ["The reporting site", "/charts"]
+  - ["The reporting site", "/reports"]
 api_version: "1.0"
-base_url: "http://scheduler.belectric-data.com"
+base_url: "http://scheduler.linked-energy.org"
