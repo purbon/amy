@@ -1,65 +1,38 @@
 # Amy
 
-Amy is a documentation robot, able to scrap a set of specification files and compose a nice ( more or less ),
-set of web pages. Oriented to solve the problem of getting a nice documentation of your next REST-API, specially in 
-the case of Ruby there is no good option available.
-
 ![image](http://rachstick.files.wordpress.com/2012/04/amy-f.jpg)
+
+Amy aims to be a documentation engine, something alike rdoc, but for REST APIs. With the motivation in mind to solve this situation, that has not much of options, specially in the ruby world.
+
+With two mode of work, Amy can:
+
+* Scrap a list of documentation files.
+* Scrap your source code looking for special comments. ``Currently just works for sinatra``
+
+and use this info to compose a nice website with your API docs.
+
+At the documentation website you will be able to see the resources aggregated per each url pattern, and within them see each method, in a very REST way. In some cases, for the GET, HEAD and OPTIONS methods you will be able to run them and analise the output.
 
 ## I want to use it!
 
-First of all, you've to understand thisis my little playground, so I make new features as I need it, so feel free to 
-copy and adapt whatever are your need, and if you think this is nice for more people do a pull request.
+First of all, you've to understand this is in very pre alpha status, so everything can change in the near feature. But if you are still a brave man, you can take a look at [examples](examples) directory to see who to run this gem.
 
-But if you just want to use it, you've to create a directoy with the next set of files:
+If you've a nice feature in mind, please submit a pull request, every contribution is wellcome.
 
-__specs.def__
+To create the documentation website you've to run:
 
-`
-{
-    "maps": "The Map resource",
-    "elements" : "The markers and map outlier resource"
-}
-`
+* ` amy [directory with the definitions] `
 
-where the key is the resource description and the value is the title of the resource.
+There is an option to create a ``.amy`` file in your main directory where you'll be able to tune a few options for the engine. Take a look at [.amy](.amy) for an example.
 
-Then for each resource, there have to be a directory with the next set of files:
+## TODO:
 
-__resource.def__
+Next, and preatty obvious thing, is to write a decent documentation.
+I've in mind also to extend the source code parsing capabilities to include:
+* A better content management skills.
+* Support for more web frameworks and programming languages.
 
-`[
-    {
-        "params": [
-            "_num_",
-            "_num_",
-         ],
-        "location": "box/"
-    }
-]`
-
-This is a list of resources under a main one, for example in our case resourcxes relative to the map big one. 
-Important things here are params, the url parameters after the main one definition, and location, the directory where
-the definition of each verb is located.
-
-Then for each verb we should have a directory that looks like:
-
-* maps/
-  * resource.def
-  * box/
-     * get.def
-     * put.def
-     * ...
-
-so each file inside the box directory is handcrafted, nowaday using a the markdown syntax, however for later versions I
-plan to extend it to be able to use another syntax, event a custom one.
-
-the examples directory of this project, containts an example set of files.
-
-After you have your definition directory, the usage is very simple
-
-` amy [directory with the definitions] `
-
+and I'm sure many others will popup.
 
 ## Contributing to Amy
  
@@ -73,6 +46,5 @@ After you have your definition directory, the usage is very simple
 
 ## Copyright
 
-Copyright (c) 2012 Pere Urbon-Bayes. See LICENSE.txt for
-further details.
+Copyright (c) 2014 Pere Urbon-Bayes. See LICENSE.txt for further details.
 
