@@ -109,7 +109,7 @@
 
   ResourceForm = (function() {
     function ResourceForm(method, config) {
-      this.method = method;
+      this.method = method.replace(/[0-9]/g, '');
       this.config = config;
       return;
     }

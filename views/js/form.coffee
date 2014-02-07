@@ -1,7 +1,7 @@
 class ResourceForm
    
    constructor: (method, config) ->
-     @method = method
+     @method = method.replace(/[0-9]/g, '')
      @config = config
      return
    
