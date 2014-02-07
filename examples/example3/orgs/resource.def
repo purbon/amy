@@ -1,0 +1,11 @@
+{
+  "name"    : "orgs",
+  "title"   : "List of available organizations within the system",
+  "config" : {
+      "get"     : { "url": "/orgs", "title": "Get\"s all registered organizations within the system" },
+      "post"    : { "url": "/orgs", "title": "Create a new organization whitin the system" },
+      "options" : { "url": "/orgs", "title": "The list of valid HTTP methods for this resource" },
+      "monitor" : { "url": "/orgs", "title": "Stream ofevent that inform you about whats going on" },
+      "head"    : { "url": "/orgs", "title": "Return just the headers, without any kind of body" }
+  }
+}

@@ -1,0 +1,19 @@
+### Delete a group
+
+* param _String_ The organization name
+* param _String_ The map name
+* param _String_ The group name
+
+* return _Hash_ The deleted group
+ 
+### Example:
+
+curl -X DELETE [http://example.com:1884/orgs/belectric_its/maps/germany/groups/adensis](http://example.com:1884/orgs/belectric_its/maps/germany/groups/adensis)
+
+[{"name":"adensis","group":{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Polygon",
+"coordinates":[[[51.09038837084152,13.70301693677902],[51.09041717084152,13.70329293677902],[51.09040127084152,13.70329743677902],
+[51.09040307084152,13.70331468677902],[51.090371270841516,13.70332368677902],[51.09034067084151,13.70303043677902],
+[51.09038837084152,13.70301693677902]]]},"properties":{"zoom_level":20,"stream":"http://80.148.29.35:2002/streams/AdensisSolTherm"}}]},
+"areas":{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[51.09038837084152,13.70301693677902],
+[51.09041717084152,13.70329293677902],[51.09040127084152,13.70329743677902],[51.09040307084152,13.70331468677902],[51.090371270841516,13.70332368677902],
+[51.09034067084151,13.70303043677902],[51.09038837084152,13.70301693677902]]},"properties":{}}]},"map":"52f21f2d053b5b706a000004","id":"52f21f2d053b5b706a000024"}]

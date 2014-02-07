@@ -1,0 +1,11 @@
+### Get detailes information about an organization
+
+* param _String_ The organization name
+
+* return _Hash_ The organization data
+ 
+### Example:
+
+[http://example.com:1884/orgs/belectric_its](http://example.com:1884/orgs/belectric_its)
+
+  {"name":"belectric_its","properties":{"type":"Grid"},"id":"52f21f2d053b5b706a000003"}

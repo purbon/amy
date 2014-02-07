@@ -1,0 +1,8 @@
+### Query the event store between two dates
+
+* param **sensor** _String_ A sensor name
+* param **from**   _String_ A date timestamp
+* param **to**     _String_ A date timestamp
+
+
+* return _Array_ The set of events matching the query

@@ -1,0 +1,12 @@
+### Query the time zones stored at the system
+
+* param **per_page** _Integer_ The number of elements per page
+* param **page**     _Integer_ The desired page
+
+* return _Array_ The time zones stored
+ 
+### Example:
+
+[http://example.com:1884/tz/paginated/10/3](http://example.com:1884/tz/paginated/10/3)
+
+[{"tzid":"America/Dominica","country":"DM","ext":{"gmtoff":"4:05:36","updates":[["-4:00","-","AST"]]}},{"tzid":"America/St_Vincent","country":"VC","ext":{"gmtoff":"4:04:56","updates":[["-4:04:56 -","KMT","1912","   # Kingstown Mean Time"],["-4:00","-","AST"]]}}]

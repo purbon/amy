@@ -1,0 +1,8 @@
+{
+  "name"    : "tz_raw",
+  "title"   : "The time zone data service",
+  "config" : {
+      "get"     : { "url": "/tz/paginated/:per_page/:page", "params": [["per_page", "integer"],["page", "integer"]], "title": "Get\'s the list of stored time zones properly paginated" },
+      "get1"     : { "url": "/tz/paginated/:per_page/:page/ext", "params": [["per_page", "integer"],["page", "integer"]], "title": "Get\'s the list of zones paginated, include extended data" }
+  }
+}

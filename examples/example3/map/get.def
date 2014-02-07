@@ -1,0 +1,12 @@
+### Get\'s the data stored about a given map
+
+* param _String_ The organization name
+* param _String_ A map name
+
+* return _Hash_ The stored map data
+ 
+### Example:
+
+[http://example.com:1884/orgs/belectric_its/maps/germany](http://example.com:1884/orgs/belectric_its/maps/germany)
+
+{"name":"germany","properties":{"type":"SolarPower"},"organization":"belectric_its","id":"52f21f2d053b5b706a000004"}

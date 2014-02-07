@@ -1,0 +1,12 @@
+{
+  "name"    : "areas",
+  "title"   : "Operations to work with control areas",
+  "config" : {
+      "get"     : { "url": "/orgs/:org/maps/:map/groups/:group/areas", "params": [["org", "string"], ["map", "string"], ["group", "string"]], "title": "Get all control areas in the system" },
+      "post"    : { "url": "/orgs/:org/maps/:map/groups/:group/areas", "params": [["org", "string"], ["map", "string"], ["group", "string"]], "title": "Create a new control area" },
+      "delete"  : { "url": "/orgs/:org/maps/:map/groups/:group/areas", "params": [["org", "string"], ["map", "string"], ["group", "string"]], "title": "Remove all control areas" },
+      "options" : { "url": "/orgs/:org/maps/:map/groups/:group/areas", "params": [["org", "string"], ["map", "string"], ["group", "string"]], "title": "The list of valid HTTP methods for this resource" },
+      "monitor" : { "url": "/orgs/:org/maps/:map/groups/:group/areas", "params": [["org", "string"], ["map", "string"], ["group", "string"]], "title": "Stream ofevent that inform you about whats going on" },
+      "head"    : { "url": "/orgs/:org/maps/:map/groups/:group/areas", "params": [["org", "string"], ["map", "string"], ["group", "string"]], "title": "Return just the headers, without any kind of body" }
+  }
+}

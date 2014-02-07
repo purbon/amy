@@ -1,0 +1,13 @@
+### Query the time zone data for a given longitud and latitud, including extended data
+
+The extended data include for example the timezone boundaries, etc.
+
+* param **lat**  _Double_ The latitud
+* param **lon**  _Double_ The longitud
+
+* return _Hash_ The time zone info
+ 
+### Example:
+
+[http://example.com:1884/tz/50/30/ext](http://example.com:1884/tz/50/30/ext)
+

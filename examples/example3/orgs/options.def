@@ -1,0 +1,9 @@
+### The valid methods for this resouce
+
+* return _Array_ The list of valid methods for this resource
+ 
+### Example:
+
+curl -X OPTIONS [http://localhost:1884/orgs](http://localhost:1884/orgs)
+
+`["POST","GET","HEAD","OPTIONS","MONITOR"]`

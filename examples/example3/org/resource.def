@@ -1,0 +1,12 @@
+{
+  "name"    : "org",
+  "title"   : "Operations to work with an organization",
+  "config" : {
+      "get"     : { "url": "/orgs/:org", "params": [["org", "string"]], "title": "Get\"s data about the given organization" },
+      "put"     : { "url": "/orgs/:org", "params": [["org", "string"]], "title": "Update the organization data" },
+      "delete"  : { "url": "/orgs/:org", "params": [["org", "string"]], "title": "Remove an organization and the related data" },
+      "options" : { "url": "/orgs/:org", "params": [["org", "string"]], "title": "The list of valid HTTP methods for this resource" },
+      "monitor" : { "url": "/orgs/:org", "params": [["org", "string"]], "title": "Stream ofevent that inform you about whats going on" },
+      "head"    : { "url": "/orgs/:org", "params": [["org", "string"]], "title": "Return just the headers, without any kind of body" }
+  }
+}

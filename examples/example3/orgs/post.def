@@ -1,0 +1,11 @@
+### Let\'s you create a new organization within the system
+
+* param  _String_ The organization name
+* param  _Hash_   List of properties for this organization
+* return _Hash_   The newly created org
+ 
+### Example:
+
+curl -X POST [http://example.com:1884/orgs](http://example.com:1884/orgs)
+
+

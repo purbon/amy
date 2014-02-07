@@ -1,0 +1,14 @@
+{
+  "name"    : "elements",
+  "title"   : "Operations to work with elements in an area",
+  "config" : {
+      "get0"    : { "url": "/orgs/:org/maps/:map/groups/:group/areas/:area/elements/:olat/:olon/:elat/:elon", "params": [["org", "string"], ["map", "string"], ["group", "string"], ["area", "string"], ["olat", "double"], ["olon", "double"], ["elat", "double"], ["elon", "double"] ], "title": "List all elements within the given boundaries" },
+      "get1"    : { "url": "/orgs/:org/maps/:map/groups/:group/areas/:area/elements/:olat/:olon/:elat/:elon/active", "params": [["org", "string"], ["map", "string"], ["group", "string"], ["area", "string"], ["olat", "double"], ["olon", "double"], ["elat", "double"], ["elon", "double"] ], "title": "List all elements within the given boundaries currently active" },
+      "get2"    : { "url": "/orgs/:org/maps/:map/groups/:group/areas/:area/elements/:lat/:lon/near_by", "params": [["org", "string"], ["map", "string"], ["group", "string"], ["area", "string"], ["lat", "double"], ["lon", "double"] ], "title": "List all elements near by a location" },
+      "get3"    : { "url": "/orgs/:org/maps/:map/groups/:group/areas/:area/elements/:element/:version", "params": [["org", "string"], ["map", "string"], ["group", "string"], ["area", "string"], ["element", "string"], ["version", "string"] ], "title": "Get data about an element and a version of it" },
+      "post"    : { "url": "/orgs/:org/maps/:map/groups/:group/areas/:area/elements", "params": [["org", "string"], ["map", "string"], ["group", "string"], ["area", "string"] ], "title": "Create a new elements" },
+      "options" : { "url": "/orgs/:org/maps/:map/groups/:group/areas/:area/elements", "params": [["org", "string"], ["map", "string"], ["group", "string"], ["area", "string"]], "title": "The list of valid HTTP methods for this resource" },
+      "monitor" : { "url": "/orgs/:org/maps/:map/groups/:group/areas/:area/elements", "params": [["org", "string"], ["map", "string"], ["group", "string"], ["area", "string"]], "title": "Stream ofevent that inform you about whats going on" },
+      "head"    : { "url": "/orgs/:org/maps/:map/groups/:group/areas/:area/elements", "params": [["org", "string"], ["map", "string"], ["group", "string"], ["area", "string"]], "title": "Return just the headers, without any kind of body" }
+  }
+}

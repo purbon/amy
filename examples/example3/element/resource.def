@@ -1,0 +1,12 @@
+{
+  "name"    : "elements",
+  "title"   : "Operations to work with elements in an area",
+  "config" : {
+      "get"     : { "url": "/orgs/:org/maps/:map/groups/:group/areas/:area/elements/:element", "params": [["org", "string"], ["map", "string"], ["group", "string"], ["area", "string"], ["element", "string"] ], "title": "Get data about an element" },
+      "put"     : { "url": "/orgs/:org/maps/:map/groups/:group/areas/:area/elements/:element", "params": [["org", "string"], ["map", "string"], ["group", "string"], ["area", "string"], ["element", "string"] ], "title": "To update an element" },
+      "delete"  : { "url": "/orgs/:org/maps/:map/groups/:group/areas/:area/elements/:element", "params": [["org", "string"], ["map", "string"], ["group", "string"], ["area", "string"], ["element", "string"] ], "title": "To remove an element" },
+      "options" : { "url": "/orgs/:org/maps/:map/groups/:group/areas/:area/elements/:element", "params": [["org", "string"], ["map", "string"], ["group", "string"], ["area", "string"], ["element", "string"] ], "title": "The list of valid HTTP methods for this resource" },
+      "monitor" : { "url": "/orgs/:org/maps/:map/groups/:group/areas/:area/elements/:element", "params": [["org", "string"], ["map", "string"], ["group", "string"], ["area", "string"], ["element", "string"] ], "title": "Stream ofevent that inform you about whats going on" },
+      "head"    : { "url": "/orgs/:org/maps/:map/groups/:group/areas/:area/elements/:element", "params": [["org", "string"], ["map", "string"], ["group", "string"], ["area", "string"], ["element", "string"] ], "title": "Return just the headers, without any kind of body" }
+  }
+}

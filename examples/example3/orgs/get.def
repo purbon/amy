@@ -1,0 +1,17 @@
+### Get the list of organizations within the system
+
+* return _Array_ The list of organizations whithin the system
+ 
+### Example:
+
+[http://example.com:1884/orgs](http://example.com:1884/orgs)
+
+`[
+    {
+        "name": "belectric_its",
+        "properties": {
+            "type": "Grid"
+        },
+        "id": "52f21f2d053b5b706a000003"
+    }
+]`

@@ -1,0 +1,12 @@
+{
+  "name"    : "groups",
+  "title"   : "Operations to work with groups within a map",
+  "config" : {
+      "get"     : { "url": "/orgs/:org/maps/:map/groups", "params": [["org", "string"], ["map", "string"]], "title": "List all groups for a map" },
+      "post"    : { "url": "/orgs/:org/maps/:map/groups", "params": [["org", "string"], ["map", "string"]], "title": "Create a group within an map" },
+      "delete"  : { "url": "/orgs/:org/maps/:map/groups", "params": [["org", "string"], ["map", "string"]], "title": "Remove all groups for a map" },
+      "options" : { "url": "/orgs/:org/maps/:map/groups", "params": [["org", "string"], ["map", "string"]], "title": "The list of valid HTTP methods for this resource" },
+      "monitor" : { "url": "/orgs/:org/maps/:map/groups", "params": [["org", "string"], ["map", "string"]], "title": "Stream ofevent that inform you about whats going on" },
+      "head"    : { "url": "/orgs/:org/maps/:map/groups", "params": [["org", "string"], ["map", "string"]], "title": "Return just the headers, without any kind of body" }
+  }
+}

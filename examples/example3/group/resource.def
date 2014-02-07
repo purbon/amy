@@ -1,0 +1,12 @@
+{
+  "name"    : "group",
+  "title"   : "Operations to work with a group",
+  "config" : {
+      "get"     : { "url": "/orgs/:org/maps/:map/groups/:group", "params": [["org", "string"], ["map", "string"], ["group", "string"]], "title": "Get all the info stored about a group" },
+      "put"     : { "url": "/orgs/:org/maps/:map/groups/:group", "params": [["org", "string"], ["map", "string"], ["group", "string"]], "title": "To update a group" },
+      "delete"  : { "url": "/orgs/:org/maps/:map/groups/:group", "params": [["org", "string"], ["map", "string"], ["group", "string"]], "title": "Remove a group" },
+      "options" : { "url": "/orgs/:org/maps/:map/groups/:group", "params": [["org", "string"], ["map", "string"], ["group", "string"]], "title": "The list of valid HTTP methods for this resource" },
+      "monitor" : { "url": "/orgs/:org/maps/:map/groups/:group", "params": [["org", "string"], ["map", "string"], ["group", "string"]], "title": "Stream ofevent that inform you about whats going on" },
+      "head"    : { "url": "/orgs/:org/maps/:map/groups/:group", "params": [["org", "string"], ["map", "string"], ["group", "string"]], "title": "Return just the headers, without any kind of body" }
+  }
+}

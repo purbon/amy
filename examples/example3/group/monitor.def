@@ -1,0 +1,3 @@
+### Open an stream of events to know whats going on within this resource
+
+* return A server send events stream 

@@ -1,0 +1,11 @@
+{
+  "name"    : "events",
+  "title"   : "The time zone query service",
+  "config" : {
+      "get"     : { "url": "/events/parser/:query", "params": [["query", "string"]], "title": "Query the event store directly" },
+      "get1"    : { "url": "/registered_sensors/:stream", "params": [["stream", "string"]], "title": "List of registered sensors for an stream" },
+      "get2"    : { "url": "/events/:stream/:sensor", "params": [["stream", "string"], ["sensor", "string"]], "title": "Last events happened for a sensor" },
+      "get3"    : { "url": "/events/:sensor/:from/:to", "params": [["sensor", "string"], ["from", "date"], ["to", "date"]], "title": "Query the event store between two dates" }
+
+  }
+}

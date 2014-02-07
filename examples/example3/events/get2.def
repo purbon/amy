@@ -1,0 +1,6 @@
+### List the last events happened for a given sensor
+
+* param **stream**  _String_ An stream name
+* param **sensor** _String_ A sensor name
+
+* return _Array_ The set of events matching the query

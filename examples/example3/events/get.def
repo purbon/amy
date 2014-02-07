@@ -1,0 +1,5 @@
+### Query the event store directly
+
+* param **query**  _String_ The query
+
+* return _Array_ The set of events matching the query

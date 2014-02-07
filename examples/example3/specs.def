@@ -1,0 +1,58 @@
+{
+    "resources": {
+        "/events": {
+            "dir": "events",
+            "title": "Interface to query the events stored in the system"
+        },
+        "/tz/:lat/:lon": {
+            "dir": "tz",
+            "title": "Time zone query service"
+        },
+        "/tz/paginated/:per_page/:page": {
+            "dir": "tz_raw",
+            "title": "Time zone data service"
+        }, 
+       "/orgs": {
+            "dir": "orgs",
+            "title": "List of organizations within the system"
+        },
+        "/orgs/:org": {
+            "dir": "org",
+            "title": "Operations to work with an organization"
+        },
+        "/orgs/:org/maps": {
+            "dir": "maps",
+            "title": "Operations to work with maps in the system"
+        },
+        "/orgs/:org/maps/:map": {
+            "dir": "map",
+            "title": "Operations to work with a map"
+        },
+        "/orgs/:org/maps/:map/groups": {
+            "dir": "groups",
+            "title": "Operations to work with groups within a map"
+        },
+        "/orgs/:org/maps/:map/group/:group": {
+            "dir": "group",
+            "title": "Operations to work with a group"
+        },
+        "/orgs/:org/maps/:map/group/:group/areas": {
+            "dir": "areas",
+            "title": "Operations to work with control areas"
+        },
+        "/orgs/:org/maps/:map/group/:group/areas/:area": {
+            "dir": "area",
+            "title": "Operations to work with a control area"
+        },
+        "/orgs/:org/maps/:map/group/:group/areas/:area/elements": {
+            "dir": "elements",
+            "title": "Operations to work with elements in the map"
+        },
+        "/orgs/:org/maps/:map/group/:group/areas/:area/elements/:element": {
+            "dir": "element",
+            "title": "Operations to work with an element"
+        }
+    },
+    "base_url" : "http://80.148.29.35:2007",
+    "api_version" : "1.2"
+}

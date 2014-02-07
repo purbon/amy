@@ -1,0 +1,11 @@
+{
+  "name"    : "maps",
+  "title"   : "Operations to work with maps in the system",
+  "config" : {
+      "get"     : { "url": "/orgs/:org/maps", "params": [["org", "string"]], "title": "List the maps within an organization" },
+      "post"    : { "url": "/orgs/:org/maps", "params": [["org", "string"]], "title": "Create a new map within an organization" },
+      "options" : { "url": "/orgs/:org/maps", "params": [["org", "string"]], "title": "The list of valid HTTP methods for this resource" },
+      "monitor" : { "url": "/orgs/:org/maps", "params": [["org", "string"]], "title": "Stream ofevent that inform you about whats going on" },
+      "head"    : { "url": "/orgs/:org/maps", "params": [["org", "string"]], "title": "Return just the headers, without any kind of body" }
+  }
+}

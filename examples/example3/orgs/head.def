@@ -1,0 +1,3 @@
+### Return just the headers of this resource
+
+* return _Array_ The list of headers

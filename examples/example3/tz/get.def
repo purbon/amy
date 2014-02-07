@@ -1,0 +1,12 @@
+### Query the time zone data for a given longitud and latitud
+
+* param **lat**  _Double_ The latitud
+* param **lon**  _Double_ The longitud
+
+* return _Hash_ The time zone info
+ 
+### Example:
+
+[http://example.com:1884/tz/50/30](http://example.com:1884/tz/50/30)
+
+[{"tzid":"Europe/Kiev","country":"UA","ext":{"gmtoff":"2:02:04","updates":[["2:02:04","-","KMT","1924 May  2 # Kiev Mean Time"],["2:00","-","EET","1930 Jun 21"],["3:00","-","MSK","1941 Sep 20"],["1:00","C-Eur","CET","1943 Nov  6"],["3:00","Russia","MSK/MSD","1990"],["3:00","-","MSK","1990 Jul  1 2:00"],["2:00","-","EET","1992"],["2:00","E-Eur","EET","1995"],["2:00","EU","EET"]]}}]

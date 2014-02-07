@@ -1,0 +1,5 @@
+### The list of registered sensors for given stream
+
+* param **stream**  _String_ An stream name
+
+* return _Array_ The list of sensors registered

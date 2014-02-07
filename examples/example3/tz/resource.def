@@ -1,0 +1,8 @@
+{
+  "name"    : "tz",
+  "title"   : "The time zone query service",
+  "config" : {
+      "get"     : { "url": "/tz/:lat/:lon", "params": [["lat", "double"],["lon", "double"]], "title": "Get\'s the time zone info for a location" },
+      "get1"     : { "url": "/tz/:lat/:lon/ext", "params": [["lat", "double"],["lon", "double"]], "title": "Get\'s the located timezone data, include extended" }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name"    : "map",
+  "title"   : "Operations to work with a map",
+  "config" : {
+      "get"     : { "url": "/orgs/:org/maps/:map", "params": [["org", "string"], ["map", "string"]], "title": "Get info about a map" },
+      "put"     : { "url": "/orgs/:org/maps/:map", "params": [["org", "string"], ["map", "string"]], "title": "Update a map within an organization" },
+      "delete"  : { "url": "/orgs/:org/maps/:map", "params": [["org", "string"], ["map", "string"]], "title": "Remove a map within an organization" },
+      "options" : { "url": "/orgs/:org/maps/:map", "params": [["org", "string"], ["map", "string"]], "title": "The list of valid HTTP methods for this resource" },
+      "monitor" : { "url": "/orgs/:org/maps/:map", "params": [["org", "string"], ["map", "string"]], "title": "Stream ofevent that inform you about whats going on" },
+      "head"    : { "url": "/orgs/:org/maps/:map", "params": [["org", "string"], ["map", "string"]], "title": "Return just the headers, without any kind of body" }
+  }
+}
