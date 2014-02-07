@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "amy"
-  s.version = "0.3.1"
+  s.version = "0.3.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Pere Urbon-Bayes"]
-  s.date = "2014-01-28"
+  s.date = "2014-02-07"
   s.description = "Amy helps us to get a nice web docs, rdoc alike, of our REST API, that we can use as a main reference for users."
   s.email = "pere.urbon@gmail.com"
   s.executables = ["amy"]
@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
     "views/js/amy.coffee",
     "views/js/amy.js",
     "views/js/amy.min.js",
+    "views/js/data.json",
     "views/js/form.coffee",
     "views/js/resource.coffee",
     "views/js/utils.coffee",
