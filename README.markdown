@@ -2,6 +2,8 @@
 
 ![image](http://rachstick.files.wordpress.com/2012/04/amy-f.jpg)
 
+[![Gem Version](https://badge.fury.io/rb/amy.svg)](http://badge.fury.io/rb/amy)
+
 Amy aims to be a documentation engine, something alike rdoc, but for REST APIs. With the motivation in mind to solve this situation, that has not much of options, specially in the ruby world.
 
 With two mode of work, Amy can:
