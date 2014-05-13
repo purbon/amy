@@ -49,8 +49,9 @@ describe Amy::Aggregator do
     it "should get the specs from source code" do
       specs = aggregator.parse_source_code dir
       specs.keys.should match_array([ "/registry", "/registry/:collection/:name", 
-                                  "/registry/:collection", "/jobs/:collection", 
-                                  "/jobs/:collection/:name"])
+                                      "/registry/:collection", "/jobs/:collection", 
+                                      "/jobs/:collection/:name"
+                                    ])
     end
 
   end
