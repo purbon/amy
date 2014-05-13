@@ -3,41 +3,22 @@ require 'maruku'
 require 'amy/parser/parser'
 
 module Amy
-  class Parser
+  class Aggregator
 
     OPTIONS_FILE = ".amy"
 
-    def initialize(base_dir = "doc/")
+    def initialize(base_dir, mode)
       @generator = Amy::Generator.new base_dir
-      @options   = load_options_file
-      @mode      = @options['mode'] || 'file'
+      @mode      = mode
     end
-
-    require 'pp'
-
-    def execute(dir)
-      specs  = load_specs dir
-      if (@mode == "code")
-        specs['links'] = @options['links']
-        specs['base_url'] = @options['base_url']
-        specs['api_version'] = @options['api_version']
-      end
-      compile_json_specs_with dir, specs
-      generate_main_page_with specs
-      copy_styles_and_js
-      true
-    end
-
-    private
 
     def compile_json_specs_with(dir, specs)
       specs['resources'].each_pair { |resource, options|
-         resource_spec = JSON.parse(IO.read(File.join(File.join(dir, options['dir']),"resource.def")))
-         options['config'] = build_resource File.join(dir, options['dir']), resource_spec
+        resource_spec = JSON.parse(IO.read(File.join(File.join(dir, options['dir']),"resource.def")))
+        options['config'] = build_resource File.join(dir, options['dir']), resource_spec
       } if (@mode == "file")
-      File.open("#{Amy::BASE_DIR}/views/js/data.json", 'w') do |f|
-        f.write(specs.to_json)
-      end
+      flush_specs specs
+      specs
     end
 
     def build_resource(dir, specs)
@@ -63,14 +44,6 @@ module Amy
       main_page.set_version  specs['api_version']
       main_page.set_base_url specs['base_url']
       @generator.do("#{Amy::BASE_DIR}/views/main.erb.html", main_page)
-    end
-
-    def load_specs(dir)
-      if "file" == @mode then
-        JSON.parse(IO.read(File.join(dir,"/specs.def")))
-      elsif "code" == @mode then
-        { 'resources' => parse_source_code(dir) }
-      end
     end
 
     def parse_source_code(dir)
@@ -120,10 +93,14 @@ module Amy
       FileUtils.cp("#{Amy::BASE_DIR}/views/style/style.css", "#{base_dir}/style/style.css")
     end
 
-    def load_options_file
-      return {} unless File.exist?(OPTIONS_FILE)
-      YAML::load(File.open(OPTIONS_FILE))
+    private
+
+    def flush_specs(specs)
+      File.open("#{Amy::BASE_DIR}/views/js/data.json", 'w') do |f|
+        f.write(specs.to_json)
+      end
     end
+
 
   end
 end

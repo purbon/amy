@@ -7,6 +7,6 @@ if (ARGV.size != 1)
   exit(0)
 end
 
-parser = Amy::Parser.new
+parser = Amy::Proc.new
 parser.execute ARGV[0]
 exit(1)

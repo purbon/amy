@@ -1,13 +1,19 @@
-### GET - Access one single element from the map.
+### Returns a (filtered) list of organizations.
 
-* param  _String_ The element id
-* return _Hash_ The requested element.
+* param  **skip** _Integer_ Number of elements to skeep before start the operation
+* param  **take** _Integer_ Number of elements to be shown as a result
+* return _Array_ List of organizations
  
 ### Example:
 
-[http://localhost:1884/elements/4f958951d1da601624000001](http://localhost:1884/elements/4f958951d1da601624000001)
+[http://api.linkedenergy.eu:1884/orgs?skip=3&take=10](http://api.linkedenergy.eu:1884/orgs?skip=3&take=10)
 
-`{ "properties": { "name": "Sensor01", "kind": "s" },
-  "loc": { "lat": 52.487, "lon": 13.354 },
-  "id": "4f958951d1da601624000001"
-}`
+`[
+    {
+        "name": "belectric_its",
+        "properties": {
+            "type": "Grid"
+        },
+        "id": "51c95ca4d1da60255e000003"
+    }
+]`

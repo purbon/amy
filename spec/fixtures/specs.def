@@ -1,3 +1,10 @@
 {
-  "orgs" : "The organization resources"
+  "resources": {
+    "/orgs": {
+      "dir": "orgs",
+        "title": "The organization resources"
+    }
+  },
+    "base_url" : "http://api.linkedenergy.eu:1884",
+    "api_version" : "1.0"
 }

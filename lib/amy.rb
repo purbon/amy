@@ -1,6 +1,6 @@
 require 'json'
 require 'yaml'
-require 'amy/parser'
+require 'amy/proc'
 require 'amy/generate'
 
 module Amy
