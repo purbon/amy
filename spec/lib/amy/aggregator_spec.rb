@@ -48,10 +48,24 @@ describe Amy::Aggregator do
 
     it "should get the specs from source code" do
       specs = aggregator.parse_source_code dir
-      specs.keys.should match_array([ "/registry", "/registry/:collection/:name", 
-                                      "/registry/:collection", "/jobs/:collection", 
-                                      "/jobs/:collection/:name"
-                                    ])
+      specs.keys.should match_array([ "/registry", "/registry/:collection/:name", "/registry/:collection", 
+                                      "/jobs/:collection", "/jobs/:collection/:name" ])
+    end
+
+  end
+
+  describe "copy_styles_and_js" do
+
+   before(:each) do
+      Dir.stub(:mkdir).with('/tmp/doc/js')
+      FileUtils.stub(:cp).with(anything,'/tmp/doc/js/amy.js')
+      FileUtils.stub(:cp).with(anything,'/tmp/doc/data.json')      
+      Dir.stub(:mkdir).with('/tmp/doc/style')
+      FileUtils.stub(:cp).with(anything,'/tmp/doc/style/style.css')      
+   end
+
+    it "should create the directory layout without errors" do
+     expect { aggregator.copy_styles_and_js }.to_not raise_error
     end
 
   end
