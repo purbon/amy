@@ -12,9 +12,20 @@ module Amy
 
     def do(template, object)
       Dir.mkdir(@base_dir) if (not File.exist?(@base_dir) or not File.directory?( @base_dir ))
+      output = compile_erb template, object
+      flush_page object.path, output
+      output
+    end
+
+    private
+
+    def compile_erb(template, object)
       ehtml  = ERB.new(IO.read(template))
-      output = ehtml.result(object.get_binding)
-      File.open("#{@base_dir}#{object.path}", 'w') do |f|
+      ehtml.result(object.get_binding)
+    end
+
+    def flush_page(path, output)
+      File.open("#{@base_dir}#{path}", 'w') do |f|
         f.write(output)
       end
     end

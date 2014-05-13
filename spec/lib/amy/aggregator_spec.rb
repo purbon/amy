@@ -20,7 +20,23 @@ describe Amy::Aggregator do
       methods = coll['resources']['/orgs']['config'].keys
       methods.should match_array(["create", "get", "options", "head", "monitor"])
     end
-  
+
+  end
+
+  describe 'generate_main_page_with' do
+
+    let(:specs) { parser.load_specs(dir) }
+    
+    before(:each) do
+      expect(aggregator).to receive(:flush_specs).and_return('')
+      aggregator.compile_json_specs_with dir, specs
+    end
+
+    it "should get the main page compiled" do
+      page = aggregator.generate_main_page_with specs
+      page.slice(-20..-1).should eq("  </body>\n  </html>\n")
+    end
+
   end
 
 end
