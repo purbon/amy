@@ -34,4 +34,19 @@ describe Amy::Proc do
     end
   end
 
+  describe "execution" do
+
+    before(:each) do
+      agg = parser.instance_variable_get(:@aggregator)
+      agg.should_receive(:compile_json_specs_with).and_return nil
+      agg.should_receive(:generate_main_page_with).and_return nil
+      agg.should_receive(:copy_styles_and_js).and_return nil
+    end
+
+    it "should execute the right steps to compile the pages" do
+      parser.execute(dir).should be_true
+    end
+
+  end
+
 end
