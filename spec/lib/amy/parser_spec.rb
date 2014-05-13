@@ -4,7 +4,7 @@ require 'amy'
 describe Amy::Proc do
 
   let(:parser) { Amy::Proc.new }
-  let(:dir){ File.join(ROOT, 'spec/fixtures/') }
+  let(:dir){ File.join(ROOT, 'spec/fixtures/files') }
 
   describe "load_specs" do
 

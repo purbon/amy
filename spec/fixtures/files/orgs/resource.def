@@ -1,0 +1,11 @@
+{
+  "name"  : "orgs",
+  "title" : "Kirchoff organizations",
+  "config" : { 
+      "create"  : { "url" : "/orgs", "title": "Create a new organization" },
+      "get"     : { "url" : "/orgs?skip=3&take10", "title": "Get\"s a list of organizations" },
+      "options" : { "url" : "/orgs", "title": "Get\"s the list of valid HTTP verbs" },
+      "head"    : { "url" : "/orgs", "title": "Return the resource available headers" },
+      "monitor" : { "url" : "/orgs", "title": "Monitor the resouce throw SSE" }
+  }
+}
