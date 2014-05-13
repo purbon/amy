@@ -11,6 +11,10 @@ describe Amy::Aggregator do
 
     let(:specs) { parser.load_specs(dir) }
 
+    before(:each) do
+      expect(aggregator).to receive(:flush_specs).and_return('')
+    end
+
     it "should load specs file" do
       coll    = aggregator.compile_json_specs_with dir, specs
       methods = coll['resources']['/orgs']['config'].keys
