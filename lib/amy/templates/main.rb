@@ -3,10 +3,11 @@ module Amy::Model
   class Main
 
     attr_reader :path
+    attr_writer :version, :base_url, :links
 
     def initialize
       @resources  = []
-      @apiversion = ""
+      @version    = ""
       @base_url   = ""
       @links      = []
       @path       = 'index.html'
@@ -14,18 +15,6 @@ module Amy::Model
 
     def add_resource(resource)
       @resources << resource
-    end
-   
-    def set_links(links=[])
-      @links = links
-    end
-
-    def set_version(version)
-      @apiversion = version
-    end
-
-    def set_base_url(base_url)
-      @base_url = base_url
     end
 
     def get_binding
