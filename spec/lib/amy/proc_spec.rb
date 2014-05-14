@@ -13,9 +13,9 @@ describe Amy::Proc do
       spec['base_url'].should  eq('http://api.linkedenergy.eu:1884')
     end
 
-    it "shouĺd rise an exception for invalid arguments" do
-      expect {  parser.load_specs('spec/fitures') }.to raise_error(ArgumentError)
-    end 
+    it "should raise an exception for invalid arguments" do
+      expect { parser.load_specs "spec/fitures" }.to raise_error(ArgumentError)
+    end
   
     describe 'load_specs#source_code' do
 
