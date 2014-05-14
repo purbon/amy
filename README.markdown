@@ -50,5 +50,5 @@ and I'm sure many others will popup.
 
 ## Copyright
 
-Copyright (c) 2014 Pere Urbon-Bayes. See LICENSE.txt for further details.
+Copyright (c) 2013-2014 Pere Urbon-Bayes. See LICENSE.txt for further details.
 
