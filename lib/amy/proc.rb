@@ -13,11 +13,8 @@
 #
 #++
 
-require 'fileutils'
-require 'maruku'
-require 'amy/parser/parser'
 require 'amy/aggregator'
-require 'amy/helpers/helpers'
+require 'amy/loader'
 
 module Amy
  
@@ -29,10 +26,7 @@ module Amy
   #
   class Proc
 
-    include Helpers
-
     OPTIONS_FILE = ".amy"
-
     
     # Initialize processor to be able to run againts the documentation
     # reference
@@ -41,13 +35,13 @@ module Amy
       @options    = load_options_file OPTIONS_FILE
       @mode       = @options['mode'] || 'file'
       @aggregator = Amy::Aggregator.new(base_dir, @mode)
+      @loader     = Amy::Loader.new(@mode)
     end
 
     # Execute the processor againts a code base and generate the
     # documentation
-
     def execute(dir)
-      specs  = load_specs dir
+      specs = @loader.load_specs dir
       if (@mode == "code")
         specs['links'] = @options['links']
         specs['base_url'] = @options['base_url']
@@ -57,6 +51,15 @@ module Amy
       @aggregator.generate_main_page_with specs
       @aggregator.copy_styles_and_js
       true
+    end
+
+    private
+    
+    # Load the default options file used to configure Amy in case of
+    # necessity.
+    def load_options_file(file)
+      return {} unless File.exist?(file)
+      YAML::load(File.open(file))
     end
 
   end

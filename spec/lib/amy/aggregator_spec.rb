@@ -3,13 +3,13 @@ require 'amy'
 
 describe Amy::Aggregator do
 
-  let(:parser)     { Amy::Proc.new }
+  let(:loader)     { Amy::Loader.new }
   let(:aggregator) { Amy::Aggregator.new(DOC_DIR, 'file') }
   let(:dir)        { File.join(ROOT, 'spec/fixtures/files/') }
   
   describe "compile_json_specs" do
 
-    let(:specs) { parser.load_specs(dir) }
+    let(:specs) { loader.load_specs(dir) }
 
     before(:each) do
       expect(aggregator).to receive(:flush_specs).and_return('')
@@ -25,7 +25,7 @@ describe Amy::Aggregator do
 
   describe 'generate_main_page_with' do
 
-    let(:specs) { parser.load_specs(dir) }
+    let(:specs) { loader.load_specs(dir) }
     
     before(:each) do
       Amy::Generator.any_instance.stub(flush_page: {})
@@ -36,20 +36,6 @@ describe Amy::Aggregator do
     it "should get the main page compiled" do
       page = aggregator.generate_main_page_with specs
       page.slice(-20..-1).should eq("  </body>\n  </html>\n")
-    end
-
-  end
-
-  describe 'parse_source_code' do
-
-    let(:parser)     { Amy::Proc.new }
-    let(:aggregator) { Amy::Aggregator.new(DOC_DIR, 'code') }
-    let(:dir)        { File.join(ROOT, 'spec/fixtures/code/') }
-
-    it "should get the specs from source code" do
-      specs = aggregator.parse_source_code dir
-      specs.keys.should match_array([ "/registry", "/registry/:collection/:name", "/registry/:collection", 
-                                      "/jobs/:collection", "/jobs/:collection/:name" ])
     end
 
   end
